@@ -78,7 +78,8 @@ export const siteData = {
         "Developed a full-stack application using Streamlit, LangChain, and LLM-based agents. Implemented prompt engineering, agent logic, and retrieval pipelines for ChatGPT-powered interactions.",
       tech: ["Streamlit", "LangChain", "LLMs", "RAG", "Vector Store"],
       links: [
-        { label: "GitHub", url: "https://github.com/Photon7777/NexGen_Deploy" }, // update
+        { label: "GitHub", url: "https://github.com/Photon7777/NexGen_Deploy" },
+        { label: "Demo", url: "https://nexgen-ai.streamlit.app/" } // update
       ],
     },
     {
@@ -91,18 +92,18 @@ export const siteData = {
       tech: ["Python", "Scikit-learn", "CNN", "Flask", "React"],
       links: [
         { label: "GitHub", url: "https://github.com/your-github/disease-prediction" },
-        { label: "Demo", url: "https://your-demo-link.com" } // update
+         // update
       ],
     },
     {
       title: "Fraud Detection Research (CVIT Conference)",
       badge: "Publication",
       impact:
-        "Presented a comparative analysis of ML algorithms for fraudulent activity detection.",
+        "Presented a comparative analysis of ML algorithms for fraudulent activity detection in credit card transactions.",
       description:
         "Research work comparing machine learning algorithms for fraud detection and presenting findings at a conference.",
       tech: ["Machine Learning", "Model Evaluation", "Research"],
-      links: [{ label: "Paper / Slides", url: "#" }], // update
+      links: [{ label: "Paper", url: "https://drive.google.com/file/d/1KmNCJsYoJkgrbJ7xZlYdJ7a7YXQKkNtD/view?usp=sharing" }], // update
     },
   ],
 };
