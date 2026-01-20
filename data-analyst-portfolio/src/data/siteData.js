@@ -78,7 +78,7 @@ export const siteData = {
         "Developed a full-stack application using Streamlit, LangChain, and LLM-based agents. Implemented prompt engineering, agent logic, and retrieval pipelines for ChatGPT-powered interactions.",
       tech: ["Streamlit", "LangChain", "LLMs", "RAG", "Vector Store"],
       links: [
-        { label: "GitHub", url: "https://github.com/your-github/nexgen-ai" }, // update
+        { label: "GitHub", url: "https://github.com/Photon7777/NexGen_Deploy" }, // update
       ],
     },
     {
@@ -90,7 +90,8 @@ export const siteData = {
         "Built and deployed disease prediction models using Logistic Regression, Random Forest, and CNN, with a real-time web app front-end and backend API.",
       tech: ["Python", "Scikit-learn", "CNN", "Flask", "React"],
       links: [
-        { label: "GitHub", url: "https://github.com/your-github/disease-prediction" }, // update
+        { label: "GitHub", url: "https://github.com/your-github/disease-prediction" },
+        { label: "Demo", url: "https://your-demo-link.com" } // update
       ],
     },
     {
