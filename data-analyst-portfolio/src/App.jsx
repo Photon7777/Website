@@ -5,6 +5,7 @@ import ProjectCard from "./components/ProjectCard";
 import Footer from "./components/Footer";
 import { siteData } from "./data/siteData";
 import { FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 export default function App() {
   return (
@@ -14,36 +15,54 @@ export default function App() {
       <main className="container">
         {/* HERO */}
         <section className="hero">
-          <div>
-            <p className="kicker">{siteData.location}</p>
-            <h1>{siteData.name}</h1>
-            <p className="subtitle">{siteData.headline}</p>
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <p className="kicker">{siteData.location}</p>
+        <h1>
+          {siteData.name}<span className="accent">.</span>
+        </h1>
+        <p className="subtitle">{siteData.headline}</p>
 
-            <div className="hero-cta">
-              <a className="btn" href="#projects">View Projects</a>
-              <a className="btn btn-ghost" href="#contact">Contact</a>
-            </div>
+        <div className="hero-cta">
+          <a className="btn" href="#projects">View Projects</a>
+          <a className="btn btn-ghost" href="#contact">Contact</a>
+        </div>
 
-            <div className="panel">
-              <p className="strong">Summary</p>
-              <ul>
-                {siteData.summary.map((s, i) => (
-                  <li key={i}>{s}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        <div className="stat-row">
+          <span className="stat-pill">1.5+ yrs experience</span>
+          <span className="stat-pill">SQL • Python • Power BI</span>
+          <span className="stat-pill">Open to Summer 2026</span>
+        </div>
 
-          <div className="panel">
-            <p className="strong">What I’m strongest at</p>
-            <ul>
-              <li>SQL analysis + data quality checks</li>
-              <li>Python pipelines (validation, automation)</li>
-              <li>BI dashboards (Power BI) + storytelling</li>
-              <li>Documentation + agile execution (JIRA/Confluence)</li>
-            </ul>
-          </div>
-        </section>
+        <div className="panel">
+          <p className="strong">Summary</p>
+          <ul>
+            {siteData.summary.map((s, i) => (
+              <li key={i}>{s}</li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+        className="panel"
+      >
+        <p className="strong">What I’m strongest at</p>
+        <ul>
+          <li>SQL analysis + data quality checks</li>
+          <li>Python pipelines (validation, automation)</li>
+          <li>BI dashboards (Power BI) + storytelling</li>
+          <li>Documentation + agile execution (JIRA/Confluence)</li>
+        </ul>
+      </motion.div>
+    </section>
+
 
         {/* ABOUT */}
         <Section
@@ -129,10 +148,6 @@ export default function App() {
                 <FiPhone /> Call
               </a>
             </div>
-
-            <p className="muted small" style={{ marginTop: ".8rem" }}>
-              Update these links in <code>src/data/siteData.js</code>.
-            </p>
           </div>
         </Section>
       </main>

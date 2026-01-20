@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 
 export default function ProjectCard({ p }) {
   return (
-    <article className="card">
+    <motion.article
+      className="card"
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.18, ease: "easeOut" }}
+    >
       <div className="card-top">
         <div className="card-title-row">
           <h3>{p.title}</h3>
@@ -26,6 +31,6 @@ export default function ProjectCard({ p }) {
           </a>
         ))}
       </div>
-    </article>
+    </motion.article>
   );
 }
