@@ -5,7 +5,7 @@ export const siteData = {
   phone: "(240) 886-7483",
   email: "lakhrav@umd.edu",
   linkedin: "https://www.linkedin.com/in/sai-praneeth-kmg",
-  github: "https://github.com/your-github", // update
+  github: "https://github.com/Photon7777", 
   resumeUrl: "https://drive.google.com/file/d/1YzJgHBxGKIQtxz44l1EBHAmdj-zBwDDa/view?usp=sharing", // add your hosted PDF link later
 
   summary: [
