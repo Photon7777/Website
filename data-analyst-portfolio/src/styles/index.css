@@ -673,11 +673,22 @@ h1{
 }
 .contact-panel p{ margin:0; line-height:1.6; }
 .contact-actions{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-  gap:.65rem;
-  max-width:470px;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(126px, 1fr));
+  gap:.7rem;
+  width:min(100%, 520px);
+  justify-self:end;
+}
+.contact-actions .btn{
+  width:100%;
+  min-width:0;
+  white-space:nowrap;
+}
+.contact-actions .btn:nth-child(4){
+  grid-column:2;
+}
+.contact-actions .btn:nth-child(5){
+  grid-column:3;
 }
 
 .footer{
@@ -705,7 +716,7 @@ h1{
   .skills-grid{
     grid-template-columns:repeat(2, minmax(0, 1fr));
   }
-  .contact-actions{ justify-content:flex-start; }
+  .contact-actions{ justify-self:start; }
 }
 
 @media (max-width: 900px){
@@ -755,10 +766,18 @@ h1{
   .education-grid{
     grid-template-columns:1fr;
   }
-  .hero-cta .btn,
-  .contact-actions .btn{
+  .hero-cta .btn{
     width:100%;
   }
+  .contact-actions{
+    grid-template-columns:1fr;
+    width:100%;
+  }
+  .contact-actions .btn:nth-child(4),
+  .contact-actions .btn:nth-child(5){
+    grid-column:auto;
+  }
+  .contact-actions .btn{ width:100%; }
   .profile-panel{ padding:.75rem; }
   .section{ padding:3.2rem 0; }
   .section-head h2{ font-size:1.65rem; }

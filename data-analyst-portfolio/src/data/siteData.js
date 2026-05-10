@@ -12,14 +12,14 @@ export const siteData = {
   profileImage: "/profile-photo.jpeg",
 
   metrics: [
-    { label: "Experience", value: "1.5+ yrs", detail: "analytics, ETL, and reporting automation" },
+    { label: "Experience", value: "2 years", detail: "analytics, ETL, and reporting automation" },
     { label: "Retail Analytics", value: "98%", detail: "market share estimation accuracy" },
     { label: "Business Impact", value: "$20M", detail: "growth opportunities surfaced" },
     { label: "Recognition", value: "EY UMD", detail: "Best Data Scientist award" },
   ],
 
   summary: [
-    "Data Analyst with 1.5+ years of experience delivering analytics, data validation, and reporting automation across large retail datasets.",
+    "Data Analyst with 2 years of experience delivering analytics, data validation, and reporting automation across large retail datasets.",
     "Strong in Python, SQL, BI dashboards, and applied AI; comfortable turning messy data into quality-checked pipelines, KPI reporting, and stakeholder-ready insights.",
   ],
 

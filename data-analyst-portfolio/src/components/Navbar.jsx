@@ -17,10 +17,11 @@ export default function Navbar({ name, resumeUrl }) {
 
   useEffect(() => {
     const updateActive = () => {
+      const anchor = Math.min(window.innerHeight * 0.42, 360);
       const current = items.reduce((latest, item) => {
         const section = document.querySelector(item.href);
         const rect = section?.getBoundingClientRect();
-        if (rect && rect.top <= 150 && rect.bottom > 150) {
+        if (rect && rect.top <= anchor && rect.bottom > anchor) {
           return item.href.slice(1);
         }
         return latest;
