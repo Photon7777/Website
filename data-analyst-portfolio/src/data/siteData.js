@@ -9,7 +9,7 @@ export const siteData = {
   linkedin: "https://www.linkedin.com/in/sai-praneeth-kmg",
   github: "https://github.com/Photon7777",
   resumeUrl: "/Resume_SaiPraneeth.pdf",
-  profileImage: "/profile-photo.jpeg",
+  profileImage: "/profile-photo.png",
 
   metrics: [
     { label: "Experience", value: "2 years", detail: "analytics, ETL, and reporting automation" },
