@@ -32,11 +32,13 @@ code{ background: rgba(255,255,255,.06); padding: .15rem .35rem; border-radius: 
 .nav-inner{
   display:flex; align-items:center; justify-content:space-between;
   padding:.9rem 0; gap:1rem;
+  position:relative;
 }
-.brand{ font-weight:800; letter-spacing:.2px; }
+.brand{ font-weight:800; letter-spacing:0; }
 .nav-links{ display:flex; gap:.85rem; }
 .nav-links a{ color: var(--muted); font-size:.95rem; }
 .nav-links a:hover{ color: var(--text); }
+.nav-actions{ display:flex; align-items:center; gap:.6rem; }
 
 .btn{
   display:inline-flex; align-items:center; gap:.5rem;
@@ -52,10 +54,26 @@ code{ background: rgba(255,255,255,.06); padding: .15rem .35rem; border-radius: 
   box-shadow:none; color: var(--text);
 }
 .btn-ghost:hover{ border-color: rgba(255,255,255,.2); }
+.icon-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:2.65rem;
+  height:2.65rem;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor:pointer;
+}
+.icon-btn:hover{ border-color: rgba(255,255,255,.2); }
+.mobile-toggle{ display:none; }
+.mobile-menu{ display:none; }
 
 .hero{
-  display:grid; grid-template-columns: 1.25fr .75fr;
+  display:grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
   gap:2rem; padding:3.2rem 0 1.5rem;
+  align-items:start;
 }
 .kicker{ color: var(--muted); margin:0 0 .6rem; }
 h1{ margin:.1rem 0 .6rem; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height:1.05; }
@@ -72,6 +90,26 @@ h1{ margin:.1rem 0 .6rem; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height:1.0
 }
 .panel ul{ margin:.6rem 0 0; padding-left:1.1rem; color: var(--muted); }
 .panel li{ margin:.25rem 0; }
+.snapshot-list{
+  display:grid;
+  gap:.85rem;
+  margin-top:.85rem;
+}
+.snapshot-list div{
+  border-top:1px solid var(--border);
+  padding-top:.8rem;
+}
+.snapshot-list span{
+  display:block;
+  color:var(--muted);
+  font-size:.82rem;
+  margin-bottom:.25rem;
+}
+.snapshot-list strong{
+  display:block;
+  color:var(--text);
+  line-height:1.35;
+}
 
 .section{ padding:2.2rem 0; border-top:1px solid var(--border); scroll-margin-top:5.5rem; }
 .section-head h2{ margin:0; font-size:1.5rem; }
@@ -87,13 +125,46 @@ h1{ margin:.1rem 0 .6rem; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height:1.0
   border:1px solid var(--border);
   background: rgba(255,255,255,.03);
   border-radius:8px;
-  padding:1.1rem;
+  padding:1rem;
   box-shadow: var(--shadow);
   display:flex; flex-direction:column; gap:.8rem;
+}
+.project-media{
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  border-radius:6px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+}
+.project-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 .card-title-row{ display:flex; align-items:center; justify-content:space-between; gap:.8rem; }
 .card-top h3{ margin:0; }
 .impact{ margin:.3rem 0 0; color: var(--text); font-weight:700; }
+.case-study{
+  display:grid;
+  gap:.55rem;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:.75rem 0;
+}
+.case-study span{
+  display:block;
+  color:var(--text);
+  font-size:.8rem;
+  font-weight:800;
+  margin-bottom:.2rem;
+}
+.case-study p{
+  margin:0;
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.35;
+}
 
 .stack{ display:flex; flex-wrap:wrap; gap:.45rem; }
 .chip{
@@ -144,6 +215,33 @@ h1{ margin:.1rem 0 .6rem; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height:1.0
   .skills-grid{ grid-template-columns: 1fr; }
   .two-col{ grid-template-columns: 1fr; }
   .nav-links{ display:none; }
+  .mobile-toggle{ display:inline-flex; }
+  .mobile-menu{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    margin-top:.75rem;
+    padding:.75rem;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:rgba(11,12,16,.96);
+    box-shadow:var(--shadow);
+  }
+  .mobile-menu.open{
+    display:grid;
+    gap:.35rem;
+  }
+  .mobile-menu a{
+    color:var(--muted);
+    padding:.7rem .75rem;
+    border-radius:6px;
+  }
+  .mobile-menu a:hover{
+    color:var(--text);
+    background:rgba(255,255,255,.04);
+  }
 }
 
 /* Premium polish */
@@ -166,6 +264,10 @@ h1{ margin:.1rem 0 .6rem; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height:1.0
 .card{
   position:relative;
   overflow:hidden;
+}
+.card > *{
+  position:relative;
+  z-index:1;
 }
 .card::before{
   content:"";

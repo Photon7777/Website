@@ -1,5 +1,6 @@
 export const siteData = {
   name: "Sai Praneeth Kathi Moksha Gnana",
+  displayName: "Sai Praneeth",
   headline: "Data Analyst | Python • SQL • BI | Analytics, ETL & Applied AI",
   location: "College Park, MD (Open to Summer 2026 Internships)",
   phone: "(240) 886-7483",
@@ -98,10 +99,17 @@ export const siteData = {
     {
       title: "Forensic Analytics Dashboard",
       badge: "Best Data Scientist",
+      image: "/project-images/ey-forensic.png",
+      imageAlt: "Forensic analytics dashboard interface with workflow setup and case investigation modules",
       impact:
         "Built a forensic analytics dashboard that identified fabricated-operation signals and quantified $2.86M in implausible revenue.",
       description:
         "Created a multi-module Streamlit dashboard for EY UMD's 2026 case competition, applying EDA, data validation, anomaly detection, and chronological business-logic checks to winery operations data.",
+      caseStudy: {
+        problem: "Validate whether winery operations data showed signs of fabrication.",
+        approach: "Combined EDA, anomaly detection, and chronology/business-rule checks in Streamlit.",
+        result: "Flagged timing violations and quantified $2.86M in implausible transactions.",
+      },
       tech: ["Python", "Pandas", "Streamlit", "Anomaly Detection", "EDA", "KPI Reporting"],
       links: [
         { label: "GitHub", url: "https://github.com/Photon7777/EY_APP" },
@@ -111,10 +119,17 @@ export const siteData = {
     {
       title: "NexLearn AI",
       badge: "Honorable Mention",
+      image: "/project-images/nexlearn-ai.png",
+      imageAlt: "NexLearn AI Streamlit interface with chat input and study dashboard",
       impact:
         "Led a 4-member team to ship a full-stack LLM agent and RAG platform for context-aware learning workflows.",
       description:
         "Architected an Agentic AI Case Competition app with Streamlit, LangChain, LLM agents, prompt engineering, vector storage, and retrieval-augmented generation pipelines.",
+      caseStudy: {
+        problem: "Help students organize academic data and get context-aware planning support.",
+        approach: "Built ingestion, vector storage, RAG, prompt engineering, and LLM agent flows.",
+        result: "Delivered the full-stack AI platform as technical lead and earned an Honorable Mention.",
+      },
       tech: ["Streamlit", "LangChain", "LLM Agents", "RAG", "Prompt Engineering", "Vector Storage"],
       links: [
         { label: "GitHub", url: "https://github.com/Photon7777/NexGen_Deploy" },
@@ -124,10 +139,17 @@ export const siteData = {
     {
       title: "ML Model-Based System for Disease Prediction",
       badge: "99.7% accuracy",
+      image: "/project-images/disease-prediction.png",
+      imageAlt: "Disease prediction system workflow preview showing model stack and reported accuracy",
       impact:
         "Developed a real-time telemedicine disease prediction app with 99.7% model accuracy.",
       description:
         "Built a Flask API and React.js frontend around Logistic Regression, Random Forest, and CNN models for a diagnostic support use case.",
+      caseStudy: {
+        problem: "Provide fast diagnostic support for a telemedicine workflow.",
+        approach: "Compared Logistic Regression, Random Forest, and CNN models behind a Flask API.",
+        result: "Delivered a React.js interface around a model system reporting 99.7% accuracy.",
+      },
       tech: ["Python", "Scikit-learn", "CNN", "Logistic Regression", "Random Forest", "Flask", "React.js"],
       links: [],
     },

@@ -22,7 +22,7 @@ export default function App() {
       >
         <p className="kicker">{siteData.location}</p>
         <h1>
-          {siteData.name}<span className="accent">.</span>
+          {siteData.displayName}<span className="accent">.</span>
         </h1>
         <p className="subtitle">{siteData.headline}</p>
 
@@ -54,13 +54,21 @@ export default function App() {
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
         className="panel"
       >
-        <p className="strong">What I’m strongest at</p>
-        <ul>
-          <li>Python and SQL analytics for business-facing decisions</li>
-          <li>ETL, data validation, and quality-check automation</li>
-          <li>Power BI, Streamlit, KPI reporting, and dashboarding</li>
-          <li>Applied AI prototypes with RAG, agents, and ML models</li>
-        </ul>
+        <p className="strong">Impact Snapshot</p>
+        <div className="snapshot-list">
+          <div>
+            <span>Analytics</span>
+            <strong>Retail market share, EDA, KPI reporting</strong>
+          </div>
+          <div>
+            <span>Automation</span>
+            <strong>ETL validation pipelines, 60% fewer errors</strong>
+          </div>
+          <div>
+            <span>Applied AI</span>
+            <strong>RAG, LLM agents, ML model deployment</strong>
+          </div>
+        </div>
       </Motion.div>
     </section>
 
