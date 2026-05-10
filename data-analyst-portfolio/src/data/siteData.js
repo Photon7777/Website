@@ -94,6 +94,15 @@ export const siteData = {
       "JIRA",
       "Confluence",
     ],
+    "Soft Skills": [
+      "Stakeholder Communication",
+      "Cross-functional Collaboration",
+      "Problem Solving",
+      "Business Storytelling",
+      "Presentation",
+      "Documentation",
+      "Attention to Detail",
+    ],
   },
 
   featuredSkills: [

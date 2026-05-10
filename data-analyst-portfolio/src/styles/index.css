@@ -275,17 +275,6 @@ h1{
   font-size:1.25rem;
   line-height:1.35;
 }
-.data-bars{
-  display:grid;
-  gap:.45rem;
-  margin:1rem 0;
-}
-.data-bars span{
-  height:8px;
-  border-radius:999px;
-  border:1px solid rgba(45,212,191,.18);
-  background:linear-gradient(90deg, var(--primary), var(--sky)) left / var(--bar) 100% no-repeat, rgba(148,163,184,.12);
-}
 .featured-skill-row{
   display:flex;
   flex-wrap:wrap;

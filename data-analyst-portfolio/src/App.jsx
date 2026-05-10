@@ -72,12 +72,6 @@ export default function App() {
               <div className="profile-card-content">
                 <p className="eyebrow">Analytics Focus</p>
                 <h2>{siteData.headline}</h2>
-                <div className="data-bars" aria-hidden="true">
-                  <span style={{ "--bar": "78%" }} />
-                  <span style={{ "--bar": "92%" }} />
-                  <span style={{ "--bar": "64%" }} />
-                  <span style={{ "--bar": "86%" }} />
-                </div>
                 <div className="featured-skill-row">
                   {siteData.featuredSkills.map((skill) => (
                     <span key={skill}>{skill}</span>
@@ -114,7 +108,7 @@ export default function App() {
             </div>
           </Section>
 
-          <Section id="skills" title="Skills" subtitle="Grouped for data analyst, data science, and data engineering roles.">
+          <Section id="skills" title="Skills" subtitle="Grouped technical and workplace strengths for analyst, data science, and data engineering roles.">
             <div className="skills-grid">
               {Object.entries(siteData.skills).map(([group, items]) => (
                 <SkillGroup key={group} title={group} items={items} />

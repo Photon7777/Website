@@ -5,6 +5,7 @@ import {
   FiCpu,
   FiDatabase,
   FiTool,
+  FiUsers,
 } from "react-icons/fi";
 
 const icons = {
@@ -14,6 +15,7 @@ const icons = {
   "Cloud / Data Engineering": FiDatabase,
   Visualization: FiBarChart2,
   Tools: FiTool,
+  "Soft Skills": FiUsers,
 };
 
 export default function SkillGroup({ title, items }) {
