@@ -1,5 +1,12 @@
 import { motion as Motion } from "framer-motion";
-import { FiExternalLink } from "react-icons/fi";
+import { FiArrowUpRight, FiExternalLink, FiGithub, FiTrendingUp } from "react-icons/fi";
+import ButtonLink from "./ButtonLink";
+
+const linkIcons = {
+  GitHub: FiGithub,
+  Demo: FiExternalLink,
+  "Case Study": FiArrowUpRight,
+};
 
 export default function ProjectCard({ p }) {
   return (
@@ -19,7 +26,10 @@ export default function ProjectCard({ p }) {
           <h3>{p.title}</h3>
           {p.badge ? <span className="pill pill-accent">{p.badge}</span> : null}
         </div>
-        <p className="impact">{p.impact}</p>
+        <p className="impact">
+          <FiTrendingUp aria-hidden="true" />
+          {p.impact}
+        </p>
       </div>
 
       <p className="muted">{p.description}</p>
@@ -50,9 +60,17 @@ export default function ProjectCard({ p }) {
       {p.links?.length ? (
         <div className="links">
           {p.links.map((l) => (
-            <a key={l.label} href={l.url} className="link" target="_blank" rel="noreferrer">
-              {l.label} <FiExternalLink />
-            </a>
+            <ButtonLink
+              key={l.label}
+              href={l.url}
+              className="project-link"
+              variant={l.label === "Demo" ? "primary" : "ghost"}
+              icon={linkIcons[l.label] || FiArrowUpRight}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {l.label}
+            </ButtonLink>
           ))}
         </div>
       ) : null}

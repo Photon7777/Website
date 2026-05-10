@@ -1,6 +1,7 @@
 export const siteData = {
   name: "Sai Praneeth Kathi Moksha Gnana",
   displayName: "Sai Praneeth",
+  roleHeadline: "MSIS Graduate Student | Data Analyst | AI & Analytics Builder",
   headline: "Data Analyst | Python • SQL • BI | Analytics, ETL & Applied AI",
   location: "College Park, MD (Open to Summer 2026 Internships)",
   phone: "(240) 886-7483",
@@ -8,6 +9,14 @@ export const siteData = {
   linkedin: "https://www.linkedin.com/in/sai-praneeth-kmg",
   github: "https://github.com/Photon7777",
   resumeUrl: "/Resume_SaiPraneeth.pdf",
+  profileImage: "/profile-placeholder.svg",
+
+  metrics: [
+    { label: "Experience", value: "1.5+ yrs", detail: "analytics, ETL, and reporting automation" },
+    { label: "Retail Analytics", value: "98%", detail: "market share estimation accuracy" },
+    { label: "Business Impact", value: "$20M", detail: "growth opportunities surfaced" },
+    { label: "Recognition", value: "EY UMD", detail: "Best Data Scientist award" },
+  ],
 
   summary: [
     "Data Analyst with 1.5+ years of experience delivering analytics, data validation, and reporting automation across large retail datasets.",
@@ -29,46 +38,73 @@ export const siteData = {
     },
   ],
 
+  quickFacts: [
+    "MSIS at University of Maryland, College Park",
+    "Data Analyst experience across retail analytics and data validation",
+    "Interested in analytics, AI, data engineering, and business impact",
+  ],
+
   skills: {
-    "Programming & Data Analytics": [
+    Programming: [
       "Python",
       "SQL",
+      "HTML/CSS",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Flask",
+    ],
+    "Data Analysis": [
       "Pandas",
       "NumPy",
-      "PySpark",
-      "Scikit-learn",
-      "XGBoost",
       "Data Cleaning",
       "EDA",
       "Statistical Analysis",
+      "Data Validation",
+      "Data Quality Checks",
+      "KPI Reporting",
     ],
-    "Databases & Big Data": [
+    "Machine Learning / AI": [
+      "Scikit-learn",
+      "XGBoost",
+      "RAG",
+      "LLM Agents",
+      "Prompt Engineering",
+    ],
+    "Cloud / Data Engineering": [
+      "PySpark",
       "MySQL",
       "MongoDB",
       "Hadoop",
       "Kafka",
       "ETL Pipelines",
-      "Data Validation",
-      "Data Quality Checks",
+      "Cloud Computing Concepts (AWS, Azure, GCP)",
     ],
-    "Data Visualization & BI": [
+    Visualization: [
       "Power BI",
       "Excel",
       "Dashboarding",
-      "KPI Reporting",
       "Business Intelligence",
       "Reporting Automation",
       "PowerPoint",
+      "Streamlit",
     ],
-    "Cloud & Tools": [
-      "Cloud Computing Concepts (AWS, Azure, GCP)",
+    Tools: [
       "Git/GitHub",
       "JIRA",
       "Confluence",
-      "Streamlit",
     ],
-    "Web & Application Development": ["HTML/CSS", "JavaScript", "React.js", "Node.js", "Flask"],
   },
+
+  featuredSkills: [
+    "Python",
+    "SQL",
+    "Power BI",
+    "ETL Pipelines",
+    "Data Validation",
+    "RAG",
+    "Streamlit",
+  ],
 
   experience: [
     {
@@ -81,6 +117,7 @@ export const siteData = {
         "Engineered Python-based data validation and ETL pipelines to standardize multivendor retail datasets, reducing processing errors by 60% and cutting reporting turnaround from 2 days to 6 hours.",
         "Improved stakeholder communication by managing JIRA tickets and Confluence documentation, reducing team blockers by 30% and supporting consistent KPI delivery.",
       ],
+      tools: ["Python", "ETL", "Data Validation", "BI Reporting", "JIRA", "Confluence"],
     },
     {
       company: "Shazab Future Tech Solutions",
@@ -92,6 +129,7 @@ export const siteData = {
         "Integrated Node.js APIs and MongoDB to enable real-time operational monitoring and improve data visibility for engineering teams.",
         "Contributed to agile sprint delivery through JIRA workflows and Confluence documentation across a 5-member team.",
       ],
+      tools: ["React.js", "Node.js", "MongoDB", "JIRA", "Confluence"],
     },
   ],
 

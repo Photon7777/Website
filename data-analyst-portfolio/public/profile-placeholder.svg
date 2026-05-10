@@ -1,0 +1,15 @@
+<svg width="720" height="720" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Profile image placeholder for Sai Praneeth</title>
+  <desc id="desc">A professional placeholder with Sai Praneeth initials and data grid styling.</desc>
+  <rect width="720" height="720" rx="32" fill="#0B1220"/>
+  <path d="M0 130H720M0 230H720M0 330H720M0 430H720M0 530H720M130 0V720M230 0V720M330 0V720M430 0V720M530 0V720" stroke="#193149" stroke-width="1"/>
+  <path d="M82 520C167 410 210 437 288 339C365 241 455 259 638 126" stroke="#22C55E" stroke-width="12" stroke-linecap="round"/>
+  <path d="M82 520C167 410 210 437 288 339C365 241 455 259 638 126" stroke="#67E8F9" stroke-width="3" stroke-linecap="round"/>
+  <rect x="120" y="128" width="480" height="464" rx="28" fill="#111827" fill-opacity="0.92" stroke="#2B425C" stroke-width="2"/>
+  <circle cx="360" cy="278" r="88" fill="#172554" stroke="#38BDF8" stroke-width="4"/>
+  <text x="360" y="307" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#F8FAFC">SP</text>
+  <text x="360" y="424" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#F8FAFC">Sai Praneeth</text>
+  <text x="360" y="470" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="600" fill="#94A3B8">Data • Analytics • AI</text>
+  <rect x="218" y="514" width="284" height="44" rx="8" fill="#0F766E" fill-opacity="0.26" stroke="#2DD4BF"/>
+  <text x="360" y="543" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#A7F3D0">MSIS • Analytics • AI</text>
+</svg>
