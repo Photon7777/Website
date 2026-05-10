@@ -5,6 +5,7 @@ export default function Navbar({ name, resumeUrl }) {
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
+    { label: "Distinctions", href: "#distinctions" },
     { label: "Experience", href: "#experience" },
     { label: "Education", href: "#education" },
     { label: "Contact", href: "#contact" },

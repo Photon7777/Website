@@ -5,7 +5,7 @@ import ProjectCard from "./components/ProjectCard";
 import Footer from "./components/Footer";
 import { siteData } from "./data/siteData";
 import { FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
       <main className="container">
         {/* HERO */}
         <section className="hero">
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
@@ -33,8 +33,9 @@ export default function App() {
 
         <div className="stat-row">
           <span className="stat-pill">1.5+ yrs experience</span>
-          <span className="stat-pill">SQL • Python • Power BI</span>
-          <span className="stat-pill">Open to Summer 2026</span>
+          <span className="stat-pill">98% retail analytics accuracy</span>
+          <span className="stat-pill">$20M growth opportunities identified</span>
+          <span className="stat-pill">Best Data Scientist, EY UMD 2026</span>
         </div>
 
         <div className="panel">
@@ -45,9 +46,9 @@ export default function App() {
             ))}
           </ul>
         </div>
-      </motion.div>
+      </Motion.div>
 
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
@@ -55,12 +56,12 @@ export default function App() {
       >
         <p className="strong">What I’m strongest at</p>
         <ul>
-          <li>SQL analysis + data quality checks</li>
-          <li>Python pipelines (validation, automation)</li>
-          <li>BI dashboards (Power BI) + storytelling</li>
-          <li>Documentation + agile execution (JIRA/Confluence)</li>
+          <li>Python and SQL analytics for business-facing decisions</li>
+          <li>ETL, data validation, and quality-check automation</li>
+          <li>Power BI, Streamlit, KPI reporting, and dashboarding</li>
+          <li>Applied AI prototypes with RAG, agents, and ML models</li>
         </ul>
-      </motion.div>
+      </Motion.div>
     </section>
 
 
@@ -68,19 +69,21 @@ export default function App() {
         <Section
           id="about"
           title="About"
-          subtitle="A data analyst who ships reliable insights and clean reporting pipelines."
+          subtitle="A data analyst who ships reliable insights, automation, and stakeholder-ready analytics products."
         >
           <div className="panel">
             <p className="muted">
-              I focus on building accurate, repeatable analytics—starting from data validation and EDA,
-              through KPI definitions, and ending with dashboards and business recommendations.
+              I focus on building accurate, repeatable analytics from data validation and EDA
+              through KPI definitions, dashboards, and business recommendations. My recent work
+              spans retail market share estimation, forensic anomaly detection, reporting
+              automation, and applied AI systems.
             </p>
           </div>
         </Section>
 
         {/* SKILLS */}
-        <Section id="skills" title="Skills" subtitle="Grouped like a real resume.">
-          <div className="two-col">
+        <Section id="skills" title="Skills" subtitle="Technical stack from analytics through deployment.">
+          <div className="skills-grid">
             {Object.entries(siteData.skills).map(([group, items]) => (
               <div key={group} className="item">
                 <h3>{group}</h3>
@@ -95,6 +98,18 @@ export default function App() {
           <div className="grid">
             {siteData.projects.map((p) => (
               <ProjectCard key={p.title} p={p} />
+            ))}
+          </div>
+        </Section>
+
+        {/* DISTINCTIONS */}
+        <Section id="distinctions" title="Distinctions" subtitle="Recent recognitions and research highlights.">
+          <div className="three-col">
+            {siteData.distinctions.map((d) => (
+              <div key={d.title} className="item">
+                <h3>{d.title}</h3>
+                <p className="muted small">{d.detail}</p>
+              </div>
             ))}
           </div>
         </Section>

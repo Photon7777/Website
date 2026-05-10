@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 
 export default function ProjectCard({ p }) {
   return (
-    <motion.article
+    <Motion.article
       className="card"
       whileHover={{ y: -4 }}
       transition={{ duration: 0.18, ease: "easeOut" }}
@@ -24,13 +24,15 @@ export default function ProjectCard({ p }) {
         ))}
       </div>
 
-      <div className="links">
-        {p.links?.map((l) => (
-          <a key={l.label} href={l.url} className="link" target="_blank" rel="noreferrer">
-            {l.label} <FiExternalLink />
-          </a>
-        ))}
-      </div>
-    </motion.article>
+      {p.links?.length ? (
+        <div className="links">
+          {p.links.map((l) => (
+            <a key={l.label} href={l.url} className="link" target="_blank" rel="noreferrer">
+              {l.label} <FiExternalLink />
+            </a>
+          ))}
+        </div>
+      ) : null}
+    </Motion.article>
   );
 }
