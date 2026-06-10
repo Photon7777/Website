@@ -13,14 +13,14 @@ export const siteData = {
 
   metrics: [
     { label: "Experience", value: "2 years", detail: "analytics, ETL, and reporting automation" },
-    { label: "Retail Analytics", value: "98%", detail: "market share estimation accuracy" },
+    { label: "Pipeline Quality", value: "60%", detail: "recurring errors reduced" },
     { label: "Business Impact", value: "$20M", detail: "growth opportunities surfaced" },
     { label: "Recognition", value: "EY UMD", detail: "Best Data Scientist award" },
   ],
 
   summary: [
-    "Data Analyst with 2 years of experience delivering analytics, data validation, and reporting automation across large retail datasets.",
-    "Strong in Python, SQL, BI dashboards, and applied AI; comfortable turning messy data into quality-checked pipelines, KPI reporting, and stakeholder-ready insights.",
+    "Data Analyst with 2 years of experience delivering analytics, SQL validation, and reporting automation across large retail datasets.",
+    "Strong in Python, SQL, BigQuery, Tableau, Snowflake, and applied AI; comfortable turning messy data into quality-checked pipelines, KPI reporting, and stakeholder-ready insights.",
   ],
 
   education: [
@@ -41,17 +41,18 @@ export const siteData = {
   quickFacts: [
     "MSIS at University of Maryland, College Park",
     "Data Analyst experience across retail analytics and data validation",
-    "Interested in analytics, AI, data engineering, and business impact",
+    "Interested in analytics, AI, data engineering, cloud data platforms, and business impact",
   ],
 
   skills: {
     Programming: [
       "Python",
       "SQL",
-      "HTML/CSS",
       "JavaScript",
+      "HTML/CSS",
       "React.js",
       "Node.js",
+      "R",
       "Flask",
     ],
     "Data Analysis": [
@@ -63,36 +64,50 @@ export const siteData = {
       "Data Validation",
       "Data Quality Checks",
       "KPI Reporting",
+      "SQL Validation",
     ],
     "Machine Learning / AI": [
       "Scikit-learn",
       "XGBoost",
+      "LangChain",
+      "FAISS",
       "RAG",
-      "LLM Agents",
+      "Agentic Systems",
       "Prompt Engineering",
+      "LLM APIs",
     ],
     "Cloud / Data Engineering": [
       "PySpark",
+      "Apache Spark",
+      "GCP BigQuery",
+      "Snowflake",
       "MySQL",
       "MongoDB",
+      "Neo4j",
       "Hadoop",
       "Kafka",
+      "GCP Cloud Storage",
+      "Dataflow",
       "ETL Pipelines",
-      "Cloud Computing Concepts (AWS, Azure, GCP)",
     ],
     Visualization: [
+      "Tableau",
       "Power BI",
-      "Excel",
+      "Power Query",
+      "Looker Studio",
       "Dashboarding",
       "Business Intelligence",
       "Reporting Automation",
+      "Excel",
       "PowerPoint",
       "Streamlit",
     ],
     Tools: [
       "Git/GitHub",
+      "Docker",
       "JIRA",
       "Confluence",
+      "dbt",
     ],
     "Soft Skills": [
       "Stakeholder Communication",
@@ -108,9 +123,9 @@ export const siteData = {
   featuredSkills: [
     "Python",
     "SQL",
-    "Power BI",
-    "ETL Pipelines",
-    "Data Validation",
+    "BigQuery",
+    "Tableau",
+    "Snowflake",
     "RAG",
     "Streamlit",
   ],
@@ -122,11 +137,13 @@ export const siteData = {
       location: "Bengaluru, Karnataka, India",
       period: "Jan 2024 – Jul 2025",
       bullets: [
-        "Delivered retail analytics and market share estimation for Walmart across 6+ business segments; achieved 98% accuracy and identified $20M in growth opportunities through EDA, quality checks, and BI reporting.",
-        "Engineered Python-based data validation and ETL pipelines to standardize multivendor retail datasets, reducing processing errors by 60% and cutting reporting turnaround from 2 days to 6 hours.",
-        "Improved stakeholder communication by managing JIRA tickets and Confluence documentation, reducing team blockers by 30% and supporting consistent KPI delivery.",
+        "Queried Walmart retail data across 6+ business segments in BigQuery using window functions and period-over-period logic to track market share, category movement, and vendor trends, flagging $20M in growth opportunities.",
+        "Standardized multivendor retail extracts in Pandas by resolving vendor naming issues, realigning category codes, and converting 4+ date formats into a unified schema before loading into BigQuery staging tables.",
+        "Built a SQL validation layer with row-count checks, vendor-segment rules, date-bound assertions, and QA logging, catching upstream data issues early and reducing recurring pipeline errors by 60%.",
+        "Converted ad-hoc BigQuery reports into scheduled SQL workflows that refreshed KPI tables nightly with deduplication checks, reducing reporting time from 2 days to 6 hours.",
+        "Built Tableau time-series benchmarks to compare product, category, and vendor performance against historical baselines, summarizing outliers in Excel KPI trackers.",
       ],
-      tools: ["Python", "ETL", "Data Validation", "BI Reporting", "JIRA", "Confluence"],
+      tools: ["Python", "SQL", "BigQuery", "Pandas", "Tableau", "Excel", "Data Validation"],
     },
     {
       company: "Shazab Future Tech Solutions",
@@ -134,9 +151,8 @@ export const siteData = {
       location: "Bengaluru, Karnataka, India",
       period: "Jan 2023 – Jun 2023",
       bullets: [
-        "Developed React.js analytics dashboards and GUIs across 2 enterprise networking hardware product lines.",
-        "Integrated Node.js APIs and MongoDB to enable real-time operational monitoring and improve data visibility for engineering teams.",
-        "Contributed to agile sprint delivery through JIRA workflows and Confluence documentation across a 5-member team.",
+        "Designed and deployed React.js analytics dashboards for 2 enterprise networking hardware product lines, connecting Node.js REST APIs with MongoDB to display real-time telemetry.",
+        "Supported sprint delivery for a 5-member agile team using JIRA and Confluence to track tasks, document API logic, and manage dashboard requirements.",
       ],
       tools: ["React.js", "Node.js", "MongoDB", "JIRA", "Confluence"],
     },
@@ -149,13 +165,13 @@ export const siteData = {
       image: "/project-images/ey-forensic.png",
       imageAlt: "Forensic analytics dashboard interface with workflow setup and case investigation modules",
       impact:
-        "Built a forensic analytics dashboard that identified fabricated-operation signals and quantified $2.86M in implausible revenue.",
+        "Flagged 45.2% of invoices for timing violations, identified 1,080 pre-hire assignment errors, and detected 818 pre-release sales anomalies.",
       description:
-        "Created a multi-module Streamlit dashboard for EY UMD's 2026 case competition, applying EDA, data validation, anomaly detection, and chronological business-logic checks to winery operations data.",
+        "Built a Streamlit forensic analytics dashboard for EY's “Swindle in the Age of AI” challenge using Pandas EDA, anomaly detection, chronological checks, and field-level validation.",
       caseStudy: {
         problem: "Validate whether winery operations data showed signs of fabrication.",
-        approach: "Combined EDA, anomaly detection, and chronology/business-rule checks in Streamlit.",
-        result: "Flagged timing violations and quantified $2.86M in implausible transactions.",
+        approach: "Combined Pandas EDA, anomaly detection, chronology checks, and field-level validation in Streamlit.",
+        result: "Earned Best Data Scientist by surfacing invoice, assignment, and pre-release sales anomalies.",
       },
       tech: ["Python", "Pandas", "Streamlit", "Anomaly Detection", "EDA", "KPI Reporting"],
       links: [
@@ -164,18 +180,18 @@ export const siteData = {
       ],
     },
     {
-      title: "NexLearn AI",
+      title: "NexGen Agentic Platform",
       badge: "Honorable Mention",
-      image: "/project-images/nexlearn-ai.png",
-      imageAlt: "NexLearn AI Streamlit interface with chat input and study dashboard",
+      image: "/project-images/nexgen-agentic-platform.png",
+      imageAlt: "NexGen Agentic Platform Streamlit interface with chat input and study dashboard",
       impact:
-        "Led a 4-member team to ship a full-stack LLM agent and RAG platform for context-aware learning workflows.",
+        "Led a 4-member team as technical lead across frontend, backend, prompt engineering, and agent logic.",
       description:
-        "Architected an Agentic AI Case Competition app with Streamlit, LangChain, LLM agents, prompt engineering, vector storage, and retrieval-augmented generation pipelines.",
+        "Architected a full-stack agentic application using Streamlit, LangChain, LLM agents, and RAG, building pipelines for knowledge ingestion, vector storage, and retrieval.",
       caseStudy: {
-        problem: "Help students organize academic data and get context-aware planning support.",
-        approach: "Built ingestion, vector storage, RAG, prompt engineering, and LLM agent flows.",
-        result: "Delivered the full-stack AI platform as technical lead and earned an Honorable Mention.",
+        problem: "Support context-aware learning workflows through an agentic AI application.",
+        approach: "Built knowledge ingestion, vector storage, RAG, prompt engineering, and LLM agent flows.",
+        result: "Delivered the full-stack platform as technical lead and earned an Honorable Mention.",
       },
       tech: ["Streamlit", "LangChain", "LLM Agents", "RAG", "Prompt Engineering", "Vector Storage"],
       links: [
@@ -184,21 +200,23 @@ export const siteData = {
       ],
     },
     {
-      title: "ML Model-Based System for Disease Prediction",
-      badge: "99.7% accuracy",
-      image: "/project-images/disease-prediction.png",
-      imageAlt: "Disease prediction system workflow preview showing model stack and reported accuracy",
+      title: "RetailIQ - Retail Analytics Intelligence Platform",
+      badge: "Cloud deployed",
+      image: "/project-images/retailiq-dashboard.png",
+      imageAlt: "RetailIQ retail analytics dashboard preview with forecasting, anomaly, and AI analyst panels",
       impact:
-        "Developed a real-time telemedicine disease prediction app with 99.7% model accuracy.",
+        "Built a cloud-deployed retail analytics platform that turns Walmart sales data into Snowflake-backed forecasting and KPI dashboards.",
       description:
-        "Built a Flask API and React.js frontend around Logistic Regression, Random Forest, and CNN models for a diagnostic support use case.",
+        "Developed RetailIQ with Python, dbt, Snowflake, Streamlit, Docker, SQL, demand forecasting, anomaly detection, stockout risk tracking, and governed LLM analyst workflows.",
       caseStudy: {
-        problem: "Provide fast diagnostic support for a telemedicine workflow.",
-        approach: "Compared Logistic Regression, Random Forest, and CNN models behind a Flask API.",
-        result: "Delivered a React.js interface around a model system reporting 99.7% accuracy.",
+        problem: "Convert Walmart sales data into reliable demand, stockout, anomaly, and KPI intelligence.",
+        approach: "Built Python, dbt, Snowflake, Streamlit, and Docker pipelines with controlled SQL generation for warehouse questions.",
+        result: "Delivered a cloud-deployed analytics platform with Snowflake-backed dashboards and governed LLM analyst workflows.",
       },
-      tech: ["Python", "Scikit-learn", "CNN", "Logistic Regression", "Random Forest", "Flask", "React.js"],
-      links: [],
+      tech: ["Python", "dbt", "Snowflake", "Streamlit", "Docker", "SQL", "Demand Forecasting"],
+      links: [
+        { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/AI_Retail_Analyst" },
+      ],
     },
   ],
 
@@ -206,7 +224,7 @@ export const siteData = {
     {
       title: "Best Data Scientist Award",
       detail:
-        "EY UMD 2026 Case Competition recognition for a forensic analytics dashboard that applied cross-validated anomaly detection and quantified $2.86M in impacted revenue.",
+        "EY UMD 2026 Case Competition recognition for a forensic analytics dashboard that applied EDA, anomaly detection, chronological checks, and field-level validation.",
     },
     {
       title: "Honorable Mention",
