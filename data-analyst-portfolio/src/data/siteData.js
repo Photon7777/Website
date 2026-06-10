@@ -86,6 +86,7 @@ export const siteData = {
       "Neo4j",
       "Hadoop",
       "Kafka",
+      "Airflow",
       "GCP Cloud Storage",
       "Dataflow",
       "ETL Pipelines",
@@ -108,6 +109,7 @@ export const siteData = {
       "JIRA",
       "Confluence",
       "dbt",
+      "OpenAI",
     ],
     "Soft Skills": [
       "Stakeholder Communication",
@@ -126,6 +128,7 @@ export const siteData = {
     "BigQuery",
     "Tableau",
     "Snowflake",
+    "Airflow",
     "RAG",
     "Streamlit",
   ],
@@ -205,15 +208,15 @@ export const siteData = {
       image: "/project-images/retailiq-dashboard.png",
       imageAlt: "RetailIQ retail analytics dashboard preview with forecasting, anomaly, and AI analyst panels",
       impact:
-        "Built a cloud-deployed retail analytics platform that turns Walmart sales data into Snowflake-backed forecasting and KPI dashboards.",
+        "Built a Snowflake-backed retail intelligence platform that turns Walmart sales data into demand forecasts, stockout risk scores, anomaly alerts, and executive dashboards.",
       description:
-        "Developed RetailIQ with Python, dbt, Snowflake, Streamlit, Docker, SQL, demand forecasting, anomaly detection, stockout risk tracking, and governed LLM analyst workflows.",
+        "Deployed RetailIQ on Google Cloud Run with dbt, Airflow, Docker, and OpenAI-powered analysis, including production-style pipeline health monitoring and governed Snowflake SQL access.",
       caseStudy: {
         problem: "Convert Walmart sales data into reliable demand, stockout, anomaly, and KPI intelligence.",
-        approach: "Built Python, dbt, Snowflake, Streamlit, and Docker pipelines with controlled SQL generation for warehouse questions.",
-        result: "Delivered a cloud-deployed analytics platform with Snowflake-backed dashboards and governed LLM analyst workflows.",
+        approach: "Built Python, dbt, Snowflake, Airflow, Streamlit, Docker, SQL, and OpenAI workflows with controlled Snowflake SQL access.",
+        result: "Delivered a Google Cloud Run app with production-style pipeline health monitoring and governed AI analysis.",
       },
-      tech: ["Python", "dbt", "Snowflake", "Streamlit", "Docker", "SQL", "Demand Forecasting"],
+      tech: ["Python", "dbt", "Snowflake", "Airflow", "Streamlit", "Docker", "SQL", "OpenAI", "Demand Forecasting"],
       links: [
         { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/AI_Retail_Analyst" },
       ],
