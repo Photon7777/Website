@@ -206,7 +206,7 @@ export const siteData = {
       title: "RetailIQ - Retail Analytics Intelligence Platform",
       badge: "Cloud deployed",
       image: "/project-images/retailiq-dashboard.png",
-      imageAlt: "RetailIQ retail analytics dashboard preview with forecasting, anomaly, and AI analyst panels",
+      imageAlt: "RetailIQ home dashboard screenshot showing the Snowflake-backed retail command center",
       impact:
         "Built a Snowflake-backed retail intelligence platform that turns Walmart sales data into demand forecasts, stockout risk scores, anomaly alerts, and executive dashboards.",
       description:
@@ -218,7 +218,8 @@ export const siteData = {
       },
       tech: ["Python", "dbt", "Snowflake", "Airflow", "Streamlit", "Docker", "SQL", "OpenAI", "Demand Forecasting"],
       links: [
-        { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/AI_Retail_Analyst" },
+        { label: "GitHub", url: "https://github.com/Photon7777/retailiq-demand-intelligence" },
+        { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/" },
       ],
     },
   ],
