@@ -26,15 +26,15 @@ export const siteData = {
   education: [
     {
       school: "University of Maryland, Robert H. Smith School of Business",
-      degree: "Master of Information Systems",
-      date: "Dec 2026",
+      degree: "Master of Science in Information Systems",
+      date: "Expected Dec 2026",
       location: "College Park, MD, USA",
     },
     {
       school: "Dayananda Sagar University",
-      degree: "B.Tech, Electronics and Communications Engineering",
+      degree: "Bachelor of Technology, Electronics & Communications Engineering",
       date: "Oct 2023",
-      location: "Bengaluru, Karnataka, India",
+      location: "Bengaluru, India",
     },
   ],
 
@@ -183,6 +183,26 @@ export const siteData = {
       ],
     },
     {
+      title: "RetailIQ - Retail Analytics Intelligence Platform",
+      badge: "Cloud deployed",
+      image: "/project-images/retailiq-dashboard.png",
+      imageAlt: "RetailIQ home dashboard screenshot showing the Snowflake-backed retail command center",
+      impact:
+        "Built a Snowflake-backed retail analytics platform that transforms Walmart sales data into demand forecasts, inventory risk scores, anomaly alerts, live Kafka sales monitoring, and executive dashboards.",
+      description:
+        "Deployed on Google Cloud Run with dbt, Airflow, Kafka, Docker, and OpenAI-powered analysis, including automated orchestration, pipeline health monitoring, data quality checks, and governed Snowflake SQL access.",
+      caseStudy: {
+        problem: "Convert Walmart sales data into reliable demand, stockout, anomaly, and KPI intelligence.",
+        approach: "Built Python, dbt, Snowflake, Airflow, Kafka, Streamlit, Docker, SQL, and OpenAI workflows with controlled Snowflake SQL access.",
+        result: "Delivered a Google Cloud Run app with live sales monitoring, automated orchestration, data quality checks, and governed AI analysis.",
+      },
+      tech: ["Python", "dbt", "Snowflake", "Airflow", "Kafka", "Streamlit", "Docker", "SQL", "OpenAI", "Demand Forecasting"],
+      links: [
+        { label: "GitHub", url: "https://github.com/Photon7777/retailiq-demand-intelligence" },
+        { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/" },
+      ],
+    },
+    {
       title: "NexGen Agentic Platform",
       badge: "Honorable Mention",
       image: "/project-images/nexgen-agentic-platform.png",
@@ -202,43 +222,28 @@ export const siteData = {
         { label: "Demo", url: "https://nexgen-ai.streamlit.app/" },
       ],
     },
-    {
-      title: "RetailIQ - Retail Analytics Intelligence Platform",
-      badge: "Cloud deployed",
-      image: "/project-images/retailiq-dashboard.png",
-      imageAlt: "RetailIQ home dashboard screenshot showing the Snowflake-backed retail command center",
-      impact:
-        "Built a Snowflake-backed retail intelligence platform that turns Walmart sales data into demand forecasts, stockout risk scores, anomaly alerts, and executive dashboards.",
-      description:
-        "Deployed RetailIQ on Google Cloud Run with dbt, Airflow, Docker, and OpenAI-powered analysis, including production-style pipeline health monitoring and governed Snowflake SQL access.",
-      caseStudy: {
-        problem: "Convert Walmart sales data into reliable demand, stockout, anomaly, and KPI intelligence.",
-        approach: "Built Python, dbt, Snowflake, Airflow, Streamlit, Docker, SQL, and OpenAI workflows with controlled Snowflake SQL access.",
-        result: "Delivered a Google Cloud Run app with production-style pipeline health monitoring and governed AI analysis.",
-      },
-      tech: ["Python", "dbt", "Snowflake", "Airflow", "Streamlit", "Docker", "SQL", "OpenAI", "Demand Forecasting"],
-      links: [
-        { label: "GitHub", url: "https://github.com/Photon7777/retailiq-demand-intelligence" },
-        { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/" },
-      ],
-    },
   ],
 
   distinctions: [
     {
       title: "Best Data Scientist Award",
       detail:
-        "EY UMD 2026 Case Competition recognition for a forensic analytics dashboard that applied EDA, anomaly detection, chronological checks, and field-level validation.",
+        "EY x UMD “Swindle in the Age of AI” Challenge recognition for forensic analytics, validation, and anomaly detection dashboard impact.",
     },
     {
       title: "Honorable Mention",
       detail:
-        "Agentic AI Case Competition 2025 recognition for leading full-stack LLM agent and RAG platform development across frontend, backend, and AI components.",
+        "Agentic AI Case Competition 2025 award for NexGen agentic platform, leading technical delivery across frontend, backend, RAG, and prompt workflows.",
     },
     {
-      title: "CVIT Conference Presentation",
+      title: "Project Impact Recognition",
       detail:
-        "Presented comparative analysis of machine learning algorithms for fraudulent activity detection in credit card transactions.",
+        "Mathco 2025 stakeholder recognition for ownership, QA rigor, and automation of Walmart retail reporting workflows.",
+    },
+    {
+      title: "Best Capstone Award",
+      detail:
+        "Mathco Training Program 2024 recognition as the top capstone among 150 trainees for a Streamlit ML market-basket analytics solution.",
     },
   ],
 };
