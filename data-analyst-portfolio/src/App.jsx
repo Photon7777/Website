@@ -21,7 +21,7 @@ import { motion as Motion } from "framer-motion";
 export default function App() {
   return (
     <div id="top">
-      <Navbar name={siteData.displayName} resumeUrl={siteData.resumeUrl} />
+      <Navbar name={siteData.displayName} resumeUrl="#resumes" />
 
       <main>
         <section className="hero section-grid-bg">
@@ -35,11 +35,16 @@ export default function App() {
               <p className="kicker">{siteData.location}</p>
               <h1>{siteData.displayName}</h1>
               <p className="role-line">{siteData.roleHeadline}</p>
+              <div className="target-role-strip" aria-label="Target roles">
+                {siteData.targetRoles.map((role) => (
+                  <span key={role.title}>{role.title}</span>
+                ))}
+              </div>
               <p className="subtitle">{siteData.summary[1]}</p>
 
               <div className="hero-cta">
-                <ButtonLink href={siteData.resumeUrl} icon={FiDownload} target="_blank" rel="noreferrer">
-                  Resume
+                <ButtonLink href="#resumes" icon={FiDownload}>
+                  Resumes
                 </ButtonLink>
                 <ButtonLink href={siteData.github} icon={FiGithub} variant="ghost" target="_blank" rel="noreferrer">
                   GitHub
@@ -84,9 +89,30 @@ export default function App() {
 
         <div className="container">
           <Section
+            id="roles"
+            title="Where I Fit"
+            subtitle="One profile, three recruiter pathways: analysis, analytics engineering, and data engineering."
+          >
+            <div className="role-grid">
+              {siteData.targetRoles.map((role) => (
+                <article key={role.title} className="role-card">
+                  <p className="eyebrow">{role.title}</p>
+                  <h3>{role.summary}</h3>
+                  <p>{role.evidence}</p>
+                  <div className="role-tool-row">
+                    {role.tools.map((tool) => (
+                      <span key={tool}>{tool}</span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </Section>
+
+          <Section
             id="about"
             title="About"
-            subtitle="A data analyst who ships reliable insights, automation, and stakeholder-ready analytics products."
+            subtitle="A data builder who ships reliable insights, automation, and production-style analytics products."
           >
             <div className="about-layout">
               <div className="panel editorial-panel">
@@ -108,7 +134,20 @@ export default function App() {
             </div>
           </Section>
 
-          <Section id="skills" title="Skills" subtitle="Grouped technical and workplace strengths for analyst, data science, and data engineering roles.">
+          <Section id="skills" title="Skills" subtitle="Organized by the roles I am targeting: analytics, analytics engineering, data engineering, and AI-enabled analysis.">
+            <div className="skill-matrix">
+              {siteData.skillMatrix.map((group) => (
+                <article key={group.title} className="matrix-card">
+                  <h3>{group.title}</h3>
+                  <div className="skill-list">
+                    {group.items.map((item) => (
+                      <span key={item} className="chip">{item}</span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+
             <div className="skills-grid">
               {Object.entries(siteData.skills).map(([group, items]) => (
                 <SkillGroup key={group} title={group} items={items} />
@@ -124,7 +163,29 @@ export default function App() {
             </div>
           </Section>
 
-          <Section id="distinctions" title="Distinctions" subtitle="Recent recognitions and research highlights.">
+          <Section id="resumes" title="Resume Downloads" subtitle="Choose the version that matches the role you are hiring for.">
+            <div className="resume-grid">
+              {siteData.resumeVariants.map((resume) => (
+                <article key={resume.title} className="resume-card">
+                  <div>
+                    <p className="eyebrow">Resume</p>
+                    <h3>{resume.title}</h3>
+                    <p>{resume.description}</p>
+                  </div>
+                  <div className="role-tool-row">
+                    {resume.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                  <ButtonLink href={resume.url} icon={FiDownload} target="_blank" rel="noreferrer">
+                    Download PDF
+                  </ButtonLink>
+                </article>
+              ))}
+            </div>
+          </Section>
+
+          <Section id="distinctions" title="Awards" subtitle="Recent recognitions across analytics, AI, automation, and delivery.">
             <div className="distinction-grid">
               {siteData.distinctions.map((distinction) => (
                 <article key={distinction.title} className="distinction-card">
@@ -177,8 +238,8 @@ export default function App() {
                 <ButtonLink href={siteData.github} icon={FiGithub} variant="ghost" target="_blank" rel="noreferrer">
                   GitHub
                 </ButtonLink>
-                <ButtonLink href={siteData.resumeUrl} icon={FiDownload} variant="ghost" target="_blank" rel="noreferrer">
-                  Resume
+                <ButtonLink href="#resumes" icon={FiDownload} variant="ghost">
+                  Resumes
                 </ButtonLink>
                 <ButtonLink href={`tel:${siteData.phone.replace(/[^0-9+]/g, "")}`} icon={FiPhone} variant="subtle">
                   Call

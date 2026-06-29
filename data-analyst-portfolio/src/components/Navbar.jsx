@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import { FiExternalLink, FiMenu, FiX } from "react-icons/fi";
 
 const items = [
+  { label: "Roles", href: "#roles" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Distinctions", href: "#distinctions" },
+  { label: "Resumes", href: "#resumes" },
+  { label: "Awards", href: "#distinctions" },
   { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar({ name, resumeUrl }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeId, setActiveId] = useState("about");
+  const [activeId, setActiveId] = useState("roles");
+  const isResumeAnchor = resumeUrl?.startsWith("#");
 
   useEffect(() => {
     const updateActive = () => {
@@ -25,7 +27,7 @@ export default function Navbar({ name, resumeUrl }) {
           return item.href.slice(1);
         }
         return latest;
-      }, "about");
+      }, "roles");
 
       setActiveId(current);
     };
@@ -58,8 +60,13 @@ export default function Navbar({ name, resumeUrl }) {
         </nav>
 
         <div className="nav-actions">
-          <a className="btn btn-ghost" href={resumeUrl} target="_blank" rel="noreferrer">
-            Resume <FiExternalLink />
+          <a
+            className="btn btn-ghost"
+            href={resumeUrl}
+            target={isResumeAnchor ? undefined : "_blank"}
+            rel={isResumeAnchor ? undefined : "noreferrer"}
+          >
+            Resumes {isResumeAnchor ? null : <FiExternalLink />}
           </a>
           <button
             className="icon-btn mobile-toggle"

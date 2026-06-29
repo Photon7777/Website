@@ -1,8 +1,8 @@
 export const siteData = {
   name: "Sai Praneeth Kathi Moksha Gnana",
   displayName: "Sai Praneeth",
-  roleHeadline: "MSIS Graduate Student | Data Analyst | AI & Analytics Builder",
-  headline: "Data Analyst | Python • SQL • BI | Analytics, ETL & Applied AI",
+  roleHeadline: "Data Analyst | Data Engineer | Analytics Engineer",
+  headline: "End-to-end data products | SQL pipelines • dbt • dashboards • AI analytics",
   location: "College Park, MD (Open to Summer 2026 Internships)",
   phone: "(240) 886-7483",
   email: "lakhrav@umd.edu",
@@ -12,15 +12,15 @@ export const siteData = {
   profileImage: "/profile-photo.png",
 
   metrics: [
-    { label: "Experience", value: "2 years", detail: "analytics, ETL, and reporting automation" },
-    { label: "Pipeline Quality", value: "60%", detail: "recurring errors reduced" },
+    { label: "Experience", value: "1.5 years", detail: "analytics, pipelines, and reporting automation" },
+    { label: "RetailIQ Scale", value: "421K", detail: "sales rows modeled across 45 stores" },
+    { label: "Data Quality", value: "82", detail: "dbt tests across analytics models" },
     { label: "Business Impact", value: "$20M", detail: "growth opportunities surfaced" },
-    { label: "Recognition", value: "EY UMD", detail: "Best Data Scientist award" },
   ],
 
   summary: [
-    "Data Analyst with 2 years of experience delivering analytics, SQL validation, and reporting automation across large retail datasets.",
-    "Strong in Python, SQL, BigQuery, Tableau, Snowflake, and applied AI; comfortable turning messy data into quality-checked pipelines, KPI reporting, and stakeholder-ready insights.",
+    "MSIS graduate student with 1.5 years of experience turning messy retail data into SQL pipelines, governed models, dashboards, and stakeholder-ready insights.",
+    "I build analytics systems end to end: ingestion workflows, dbt/Snowflake models, quality checks, BI dashboards, forecasting outputs, and AI-assisted analysis.",
   ],
 
   education: [
@@ -40,8 +40,69 @@ export const siteData = {
 
   quickFacts: [
     "MSIS at University of Maryland, College Park",
-    "Data Analyst experience across retail analytics and data validation",
-    "Interested in analytics, AI, data engineering, cloud data platforms, and business impact",
+    "Retail analytics experience across BigQuery, Snowflake, Tableau, and SQL validation",
+    "Targeting Data Analyst, Data Engineer, and Analytics Engineer internship roles",
+  ],
+
+  targetRoles: [
+    {
+      title: "Data Analyst",
+      summary: "Builds KPI reporting, dashboards, forecasting views, and stakeholder-ready analysis from large-scale retail data.",
+      evidence: "$20M in stakeholder-validated growth opportunities flagged from Walmart retail data.",
+      tools: ["SQL", "Python", "BigQuery", "Tableau", "Power BI", "Excel"],
+    },
+    {
+      title: "Analytics Engineer",
+      summary: "Models trusted data layers with dbt, Snowflake, validation checks, governed marts, and documented business logic.",
+      evidence: "RetailIQ includes 16 dbt models, 82 data quality tests, and governed Snowflake SQL access.",
+      tools: ["dbt", "Snowflake", "SQL validation", "Data quality", "Marts", "Documentation"],
+    },
+    {
+      title: "Data Engineer",
+      summary: "Designs ingestion and orchestration workflows that move data reliably into analytics-ready platforms.",
+      evidence: "RetailIQ uses a 9-step Airflow DAG, Kafka streaming layer, Docker, and Google Cloud Run deployment.",
+      tools: ["Airflow", "Kafka", "Docker", "GCS", "Cloud Run", "BigQuery"],
+    },
+  ],
+
+  resumeVariants: [
+    {
+      title: "Data Analyst Resume",
+      url: "/Resume_Sai_Praneeth_Kathi_Moksha_Gnana_Data_Analyst.pdf",
+      description: "Best for BI, KPI reporting, SQL analysis, Tableau/Power BI, and stakeholder insight roles.",
+      tags: ["SQL", "Tableau", "BigQuery", "Power BI"],
+    },
+    {
+      title: "Analytics Engineer Resume",
+      url: "/Resume_Sai_Praneeth_Kathi_Moksha_Gnana_Analytics_Engineer.pdf",
+      description: "Best for dbt, Snowflake, data modeling, quality tests, governed marts, and analytics infrastructure roles.",
+      tags: ["dbt", "Snowflake", "SQL models", "Data quality"],
+    },
+    {
+      title: "Data Engineer Resume",
+      url: "/Resume_Sai_Praneeth_Kathi_Moksha_Gnana_Data_Engineer.pdf",
+      description: "Best for pipeline, orchestration, ingestion, Kafka, Airflow, Docker, and cloud data roles.",
+      tags: ["Airflow", "Kafka", "Docker", "Pipelines"],
+    },
+  ],
+
+  skillMatrix: [
+    {
+      title: "Analytics",
+      items: ["SQL", "Python", "BigQuery", "Tableau", "Power BI", "Excel", "KPI Reporting"],
+    },
+    {
+      title: "Analytics Engineering",
+      items: ["dbt", "Snowflake", "SQL Validation", "Data Quality Tests", "Governed Marts", "Documentation"],
+    },
+    {
+      title: "Data Engineering",
+      items: ["Airflow", "Kafka", "Docker", "Cloud Run", "GCS", "BigQuery Ingestion", "ETL/ELT"],
+    },
+    {
+      title: "AI / ML Analytics",
+      items: ["RAG", "LangChain", "LLM APIs", "Forecasting", "Anomaly Detection", "Prompt Engineering"],
+    },
   ],
 
   skills: {
@@ -123,14 +184,14 @@ export const siteData = {
   },
 
   featuredSkills: [
-    "Python",
     "SQL",
+    "Python",
     "BigQuery",
-    "Tableau",
     "Snowflake",
+    "dbt",
     "Airflow",
-    "RAG",
-    "Streamlit",
+    "Kafka",
+    "Tableau",
   ],
 
   experience: [
@@ -163,12 +224,47 @@ export const siteData = {
 
   projects: [
     {
+      title: "RetailIQ - Retail Analytics Intelligence Platform",
+      badge: "Flagship data product",
+      image: "/project-images/retailiq-dashboard.png",
+      imageAlt: "RetailIQ home dashboard screenshot showing the Snowflake-backed retail command center",
+      tags: ["Data Engineering", "Analytics Engineering", "BI"],
+      highlights: [
+        { label: "Sales Rows", value: "421K" },
+        { label: "Forecast Rows", value: "425K" },
+        { label: "dbt Models", value: "16" },
+        { label: "Quality Tests", value: "82" },
+        { label: "Airflow DAG", value: "9-step" },
+      ],
+      impact:
+        "Architected a Snowflake-backed retail platform that generates forecasts, stockout risk, anomaly outputs, and executive dashboards.",
+      description:
+        "Built a cloud-native analytics product with dbt models, 82 quality tests, a 9-step Airflow DAG, Dockerized Kafka streaming, Streamlit, Google Cloud Run, and OpenAI-powered governed analysis.",
+      caseStudy: {
+        problem: "Turn Walmart sales data into reliable demand, stockout, anomaly, and KPI intelligence.",
+        approach: "Modeled Snowflake marts with dbt, orchestrated workflows in Airflow, streamed sales events through Kafka, and exposed dashboards in Streamlit.",
+        result: "Processed 421K sales rows across 45 stores and generated 425K forecast rows plus stockout-risk and anomaly output tables.",
+      },
+      tech: ["Python", "dbt", "Snowflake", "Airflow", "Kafka", "Streamlit", "Docker", "SQL", "OpenAI", "Demand Forecasting"],
+      links: [
+        { label: "GitHub", url: "https://github.com/Photon7777/retailiq-demand-intelligence" },
+        { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/" },
+      ],
+      featured: true,
+    },
+    {
       title: "Forensic Analytics Dashboard",
       badge: "Best Data Scientist",
       image: "/project-images/ey-forensic.png",
       imageAlt: "Forensic analytics dashboard interface with workflow setup and case investigation modules",
+      tags: ["Data Analysis", "Validation", "Anomaly Detection"],
+      highlights: [
+        { label: "Invoices Flagged", value: "45.2%" },
+        { label: "Pre-release Anomalies", value: "818" },
+        { label: "Line Items", value: "4,673" },
+      ],
       impact:
-        "Flagged 45.2% of invoices for timing violations, identified 1,080 pre-hire assignment errors, and detected 818 pre-release sales anomalies.",
+        "Flagged 45.2% of invoices for timing violations and detected 818 of 4,673 line items with pre-release anomalies.",
       description:
         "Built a Streamlit forensic analytics dashboard for EY's “Swindle in the Age of AI” challenge using Pandas EDA, anomaly detection, chronological checks, and field-level validation.",
       caseStudy: {
@@ -183,30 +279,16 @@ export const siteData = {
       ],
     },
     {
-      title: "RetailIQ - Retail Analytics Intelligence Platform",
-      badge: "Cloud deployed",
-      image: "/project-images/retailiq-dashboard.png",
-      imageAlt: "RetailIQ home dashboard screenshot showing the Snowflake-backed retail command center",
-      impact:
-        "Built a Snowflake-backed retail analytics platform that transforms Walmart sales data into demand forecasts, inventory risk scores, anomaly alerts, live Kafka sales monitoring, and executive dashboards.",
-      description:
-        "Deployed on Google Cloud Run with dbt, Airflow, Kafka, Docker, and OpenAI-powered analysis, including automated orchestration, pipeline health monitoring, data quality checks, and governed Snowflake SQL access.",
-      caseStudy: {
-        problem: "Convert Walmart sales data into reliable demand, stockout, anomaly, and KPI intelligence.",
-        approach: "Built Python, dbt, Snowflake, Airflow, Kafka, Streamlit, Docker, SQL, and OpenAI workflows with controlled Snowflake SQL access.",
-        result: "Delivered a Google Cloud Run app with live sales monitoring, automated orchestration, data quality checks, and governed AI analysis.",
-      },
-      tech: ["Python", "dbt", "Snowflake", "Airflow", "Kafka", "Streamlit", "Docker", "SQL", "OpenAI", "Demand Forecasting"],
-      links: [
-        { label: "GitHub", url: "https://github.com/Photon7777/retailiq-demand-intelligence" },
-        { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/" },
-      ],
-    },
-    {
       title: "NexGen Agentic Platform",
       badge: "Honorable Mention",
       image: "/project-images/nexgen-agentic-platform.png",
       imageAlt: "NexGen Agentic Platform Streamlit interface with chat input and study dashboard",
+      tags: ["AI", "RAG", "LLM Agents"],
+      highlights: [
+        { label: "Team", value: "4" },
+        { label: "Role", value: "Tech Lead" },
+        { label: "Recognition", value: "Honorable Mention" },
+      ],
       impact:
         "Led a 4-member team as technical lead across frontend, backend, prompt engineering, and agent logic.",
       description:

@@ -11,7 +11,7 @@ const linkIcons = {
 export default function ProjectCard({ p }) {
   return (
     <Motion.article
-      className="card"
+      className={`card${p.featured ? " featured-card" : ""}`}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.18, ease: "easeOut" }}
     >
@@ -31,6 +31,25 @@ export default function ProjectCard({ p }) {
           {p.impact}
         </p>
       </div>
+
+      {p.tags?.length ? (
+        <div className="project-role-tags" aria-label={`${p.title} role tags`}>
+          {p.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+      ) : null}
+
+      {p.highlights?.length ? (
+        <div className="project-highlights" aria-label={`${p.title} impact metrics`}>
+          {p.highlights.map((metric) => (
+            <div key={`${metric.label}-${metric.value}`}>
+              <strong>{metric.value}</strong>
+              <span>{metric.label}</span>
+            </div>
+          ))}
+        </div>
+      ) : null}
 
       <p className="muted">{p.description}</p>
 
