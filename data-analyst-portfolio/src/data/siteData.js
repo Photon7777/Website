@@ -122,6 +122,7 @@ export const siteData = {
       "Data Cleaning",
       "EDA",
       "Statistical Analysis",
+      "Marketing Analytics",
       "Data Validation",
       "Data Quality Checks",
       "KPI Reporting",
@@ -134,6 +135,7 @@ export const siteData = {
       "FAISS",
       "RAG",
       "Agentic Systems",
+      "Marketing Mix Modeling",
       "Prompt Engineering",
       "LLM APIs",
     ],
@@ -276,6 +278,33 @@ export const siteData = {
       links: [
         { label: "GitHub", url: "https://github.com/Photon7777/EY_APP" },
         { label: "Demo", url: "https://eyforensic.streamlit.app/" },
+      ],
+    },
+    {
+      title: "Mixalyzer - Marketing Mix Optimizer",
+      badge: "MMM + GenAI",
+      image: "/project-images/mixalyzer-dashboard.png",
+      imageAlt: "Mixalyzer marketing mix optimization dashboard screenshot with KPI cards and budget planning controls",
+      tags: ["Data Analysis", "AI Analytics", "Business Optimization"],
+      highlights: [
+        { label: "Model Trust", value: "MAPE" },
+        { label: "Budget Planning", value: "What-if" },
+        { label: "Optimization", value: "MMM" },
+        { label: "Responsible AI", value: "Audit" },
+      ],
+      impact:
+        "Built an AI-powered marketing mix optimization platform for channel ROI, budget simulation, model trust, and stakeholder-ready recommendations.",
+      description:
+        "Mixalyzer helps growth teams upload marketing data, evaluate readiness, train marketing mix models, compare baselines, simulate spend changes, optimize allocation, and export executive-ready evidence.",
+      caseStudy: {
+        problem: "Marketing teams need to know which channels drive incremental revenue and where the next budget dollar should go.",
+        approach: "Built a Streamlit decision-support app with MMM modeling, adstock and saturation features, baseline comparison, budget optimization, confidence ranges, and grounded AI recommendations.",
+        result: "Delivered a planning workflow with model trust badges, responsible AI checks, and exportable recommendations for growth, finance, and executive teams.",
+      },
+      tech: ["Python", "Streamlit", "Marketing Mix Modeling", "Ridge Regression", "Bayesian MMM", "OpenAI", "Excel Exports", "Responsible AI"],
+      links: [
+        { label: "GitHub", url: "https://github.com/Photon7777/marketing-mix-optimizer" },
+        { label: "Demo", url: "https://mixalyzer.streamlit.app/" },
       ],
     },
     {
