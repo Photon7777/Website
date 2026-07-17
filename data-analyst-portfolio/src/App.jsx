@@ -1,8 +1,9 @@
 import "./styles/index.css";
 import Navbar from "./components/Navbar";
 import Section from "./components/Section";
-import ProjectCard from "./components/ProjectCard";
 import FeaturedProjectCard from "./components/FeaturedProjectCard";
+import ProjectIndexCard from "./components/ProjectIndexCard";
+import ProjectDeepDive from "./components/ProjectDeepDive";
 import Footer from "./components/Footer";
 import ButtonLink from "./components/ButtonLink";
 import SkillGroup from "./components/SkillGroup";
@@ -191,10 +192,14 @@ export default function App() {
             </div>
           </Section>
 
-          <Section id="projects" title="Projects" subtitle="Portfolio projects framed by problem, approach, and result.">
-            <div className="project-grid case-study-grid">
+          <Section
+            id="projects"
+            title="Project Index"
+            subtitle="A quick scan of the work. Use Deep Dive only when you want the full problem, build, and outcome narrative."
+          >
+            <div className="project-index-grid">
               {siteData.projects.map((project) => (
-                <ProjectCard key={project.title} p={project} />
+                <ProjectIndexCard key={project.title} project={project} />
               ))}
             </div>
           </Section>
@@ -281,6 +286,18 @@ export default function App() {
                   Call
                 </ButtonLink>
               </div>
+            </div>
+          </Section>
+
+          <Section
+            id="case-studies"
+            title="Project Deep Dives"
+            subtitle="Optional detail for reviewers who want the full problem, build, outcome, and technical decisions."
+          >
+            <div className="case-study-list">
+              {siteData.projects.map((project) => (
+                <ProjectDeepDive key={project.title} project={project} />
+              ))}
             </div>
           </Section>
         </div>

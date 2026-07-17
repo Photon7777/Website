@@ -2,19 +2,16 @@ import { useEffect, useState } from "react";
 import { FiExternalLink, FiMenu, FiX } from "react-icons/fi";
 
 const items = [
-  { label: "Roles", href: "#roles" },
-  { label: "About", href: "#about" },
+  { label: "Work", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Resumes", href: "#resumes" },
-  { label: "Awards", href: "#distinctions" },
   { label: "Experience", href: "#experience" },
+  { label: "Resumes", href: "#resumes" },
   { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar({ name, resumeUrl }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeId, setActiveId] = useState("roles");
+  const [activeId, setActiveId] = useState("projects");
   const isResumeAnchor = resumeUrl?.startsWith("#");
 
   useEffect(() => {
@@ -27,7 +24,7 @@ export default function Navbar({ name, resumeUrl }) {
           return item.href.slice(1);
         }
         return latest;
-      }, "roles");
+      }, "projects");
 
       setActiveId(current);
     };
