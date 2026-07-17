@@ -1,18 +1,15 @@
 import "./styles/index.css";
 import Navbar from "./components/Navbar";
 import Section from "./components/Section";
-import FeaturedProjectCard from "./components/FeaturedProjectCard";
-import ProjectIndexCard from "./components/ProjectIndexCard";
-import ProjectDeepDive from "./components/ProjectDeepDive";
 import Footer from "./components/Footer";
 import ButtonLink from "./components/ButtonLink";
-import SkillGroup from "./components/SkillGroup";
 import ExperienceCard from "./components/ExperienceCard";
 import MetricCard from "./components/MetricCard";
 import Reveal from "./components/Reveal";
+import ProjectsPage from "./pages/ProjectsPage";
 import { siteData } from "./data/siteData";
 import {
-  FiArrowDown,
+  FiArrowRight,
   FiDownload,
   FiGithub,
   FiLinkedin,
@@ -22,8 +19,13 @@ import {
 import { motion as Motion } from "framer-motion";
 
 export default function App() {
+  const isProjectsPage = window.location.pathname.startsWith("/projects");
   const featuredProjects = siteData.projects.filter((project) => project.featured).slice(0, 3);
   const defaultResume = siteData.resumeVariants[0]?.url || siteData.resumeUrl;
+
+  if (isProjectsPage) {
+    return <ProjectsPage />;
+  }
 
   return (
     <div id="top">
@@ -61,7 +63,7 @@ export default function App() {
                 <ButtonLink href={siteData.github} icon={FiGithub} variant="ghost" target="_blank" rel="noreferrer">
                   GitHub
                 </ButtonLink>
-                <ButtonLink href="#projects" icon={FiArrowDown} variant="subtle">
+                <ButtonLink href="/projects" icon={FiArrowRight} variant="subtle">
                   Projects
                 </ButtonLink>
               </div>
@@ -106,25 +108,65 @@ export default function App() {
           <div className="container">
             <Reveal>
               <div className="section-head home-featured-head">
-                <p className="eyebrow">Featured Work</p>
-                <h2 id="featured-work-title">Three projects that show the way I build.</h2>
+                <p className="eyebrow">Work Snapshot</p>
+                <h2 id="featured-work-title">A quick read before the full project page.</h2>
                 <p className="muted">
-                  Each one has a visual preview, a short case-study narrative, and direct links to the live product or raw code.
+                  The homepage stays lean; detailed project cards, screenshots, demos, repos, and deep dives live on a dedicated page.
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={0.05}>
-              <div className="featured-project-grid">
-                {featuredProjects.map((project) => (
-                  <FeaturedProjectCard key={project.title} project={project} />
-                ))}
+              <div className="work-snapshot-panel">
+                <div className="work-snapshot-list">
+                  {featuredProjects.map((project) => (
+                    <a key={project.title} href={`/projects#case-study-${project.slug}`} className="work-snapshot-item">
+                      <span>{project.badge}</span>
+                      <strong>{project.title}</strong>
+                      <p>{project.impact}</p>
+                    </a>
+                  ))}
+                </div>
+
+                <ButtonLink href="/projects" icon={FiArrowRight}>
+                  Open Projects Page
+                </ButtonLink>
               </div>
             </Reveal>
           </div>
         </section>
 
         <div className="container">
+          <Section id="skills" title="Skills" subtitle="A condensed view of the tools I can speak to in interviews.">
+            <div className="skill-matrix compact-skill-matrix">
+              {siteData.skillMatrix.map((group) => (
+                <article key={group.title} className="matrix-card">
+                  <h3>{group.title}</h3>
+                  <div className="skill-list">
+                    {group.items.map((item) => (
+                      <span key={item} className="chip">{item}</span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="compact-skill-strip">
+              <div>
+                <span>Core Stack</span>
+                {siteData.featuredSkills.map((skill) => (
+                  <strong key={skill}>{skill}</strong>
+                ))}
+              </div>
+              <div>
+                <span>Soft Skills</span>
+                {siteData.skills["Soft Skills"].slice(0, 4).map((skill) => (
+                  <strong key={skill}>{skill}</strong>
+                ))}
+              </div>
+            </div>
+          </Section>
+
           <Section
             id="roles"
             title="Where I Fit"
@@ -168,39 +210,6 @@ export default function App() {
                   </div>
                 ))}
               </aside>
-            </div>
-          </Section>
-
-          <Section id="skills" title="Skills" subtitle="Organized by the roles I am targeting: analytics, analytics engineering, data engineering, and AI-enabled analysis.">
-            <div className="skill-matrix">
-              {siteData.skillMatrix.map((group) => (
-                <article key={group.title} className="matrix-card">
-                  <h3>{group.title}</h3>
-                  <div className="skill-list">
-                    {group.items.map((item) => (
-                      <span key={item} className="chip">{item}</span>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="skills-grid">
-              {Object.entries(siteData.skills).map(([group, items]) => (
-                <SkillGroup key={group} title={group} items={items} />
-              ))}
-            </div>
-          </Section>
-
-          <Section
-            id="projects"
-            title="Project Index"
-            subtitle="A quick scan of the work. Use Deep Dive only when you want the full problem, build, and outcome narrative."
-          >
-            <div className="project-index-grid">
-              {siteData.projects.map((project) => (
-                <ProjectIndexCard key={project.title} project={project} />
-              ))}
             </div>
           </Section>
 
@@ -289,17 +298,6 @@ export default function App() {
             </div>
           </Section>
 
-          <Section
-            id="case-studies"
-            title="Project Deep Dives"
-            subtitle="Optional detail for reviewers who want the full problem, build, outcome, and technical decisions."
-          >
-            <div className="case-study-list">
-              {siteData.projects.map((project) => (
-                <ProjectDeepDive key={project.title} project={project} />
-              ))}
-            </div>
-          </Section>
         </div>
       </main>
 

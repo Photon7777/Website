@@ -9,7 +9,7 @@ const linkIcons = {
 export default function FeaturedProjectCard({ project }) {
   return (
     <article className="featured-project-card">
-      <a className="featured-project-media" href={`#case-study-${project.slug}`} aria-label={`Open ${project.title} deep dive`}>
+      <a className="featured-project-media" href={`/projects#case-study-${project.slug}`} aria-label={`Open ${project.title} deep dive`}>
         <img src={project.image} alt={project.imageAlt || `${project.title} preview`} loading="lazy" />
         <div className="featured-project-overlay">
           <span>Quick Preview</span>
@@ -31,7 +31,7 @@ export default function FeaturedProjectCard({ project }) {
           ))}
         </div>
 
-        <a className="case-study-link" href={`#case-study-${project.slug}`}>
+        <a className="case-study-link" href={`/projects#case-study-${project.slug}`}>
           Deep dive <FiArrowRight aria-hidden="true" />
         </a>
       </div>

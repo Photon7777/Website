@@ -2,29 +2,40 @@ import { useEffect, useState } from "react";
 import { FiExternalLink, FiMenu, FiX } from "react-icons/fi";
 
 const items = [
-  { label: "Work", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Resumes", href: "#resumes" },
-  { label: "Contact", href: "#contact" },
+  { id: "home", label: "Home", href: "/#top" },
+  { id: "projects", label: "Projects", href: "/projects" },
+  { id: "skills", label: "Skills", href: "/#skills" },
+  { id: "experience", label: "Experience", href: "/#experience" },
+  { id: "contact", label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar({ name, resumeUrl }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeId, setActiveId] = useState("projects");
-  const isResumeAnchor = resumeUrl?.startsWith("#");
+  const [activeId, setActiveId] = useState("home");
+  const isResumeAnchor = resumeUrl?.startsWith("#") || resumeUrl?.startsWith("/#");
 
   useEffect(() => {
     const updateActive = () => {
+      if (window.location.pathname.startsWith("/projects")) {
+        setActiveId("projects");
+        return;
+      }
+
+      if (window.scrollY < 220) {
+        setActiveId("home");
+        return;
+      }
+
       const anchor = Math.min(window.innerHeight * 0.42, 360);
       const current = items.reduce((latest, item) => {
-        const section = document.querySelector(item.href);
+        const hash = item.href.includes("#") ? item.href.split("#")[1] : "";
+        const section = hash ? document.querySelector(`#${hash}`) : null;
         const rect = section?.getBoundingClientRect();
         if (rect && rect.top <= anchor && rect.bottom > anchor) {
-          return item.href.slice(1);
+          return item.id;
         }
         return latest;
-      }, "projects");
+      }, "home");
 
       setActiveId(current);
     };
@@ -41,15 +52,15 @@ export default function Navbar({ name, resumeUrl }) {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a className="brand" href="#top">{name}</a>
+        <a className="brand" href="/#top">{name}</a>
 
         <nav className="nav-links">
           {items.map((it) => (
             <a
               key={it.href}
               href={it.href}
-              className={activeId === it.href.slice(1) ? "active" : ""}
-              aria-current={activeId === it.href.slice(1) ? "page" : undefined}
+              className={activeId === it.id ? "active" : ""}
+              aria-current={activeId === it.id ? "page" : undefined}
             >
               {it.label}
             </a>
@@ -63,7 +74,7 @@ export default function Navbar({ name, resumeUrl }) {
             target={isResumeAnchor ? undefined : "_blank"}
             rel={isResumeAnchor ? undefined : "noreferrer"}
           >
-            Resumes {isResumeAnchor ? null : <FiExternalLink />}
+            Resumes {isResumeAnchor ? null : <FiExternalLink aria-hidden="true" />}
           </a>
           <button
             className="icon-btn mobile-toggle"
@@ -82,7 +93,7 @@ export default function Navbar({ name, resumeUrl }) {
             <a
               key={it.href}
               href={it.href}
-              className={activeId === it.href.slice(1) ? "active" : ""}
+              className={activeId === it.id ? "active" : ""}
               onClick={() => setIsMenuOpen(false)}
             >
               {it.label}
