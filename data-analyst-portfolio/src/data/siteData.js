@@ -9,7 +9,10 @@ export const siteData = {
   linkedin: "https://www.linkedin.com/in/sai-praneeth-kmg",
   github: "https://github.com/Photon7777",
   resumeUrl: "/Resume_SaiPraneeth.pdf",
-  profileImage: "/profile-photo.png",
+  profileImage: "/profile-photo.jpg",
+  heroHook: "I build data products that turn messy business questions into trusted decisions.",
+  heroLead:
+    "I work across analytics, engineering, and applied AI: SQL models, dbt quality checks, orchestration, dashboards, and decision tools that recruiters can inspect from live apps or GitHub.",
 
   metrics: [
     { label: "Experience", value: "1.5 years", detail: "analytics, pipelines, and reporting automation" },
@@ -227,6 +230,7 @@ export const siteData = {
   projects: [
     {
       title: "RetailIQ - Retail Analytics Intelligence Platform",
+      slug: "retailiq",
       badge: "Flagship data product",
       image: "/project-images/retailiq-dashboard.png",
       imageAlt: "RetailIQ home dashboard screenshot showing the Snowflake-backed retail command center",
@@ -247,6 +251,16 @@ export const siteData = {
         approach: "Modeled Snowflake marts with dbt, orchestrated workflows in Airflow, streamed sales events through Kafka, and exposed dashboards in Streamlit.",
         result: "Processed 421K sales rows across 45 stores and generated 425K forecast rows plus stockout-risk and anomaly output tables.",
       },
+      decisions: [
+        "Used Snowflake and dbt to separate ingestion, staging, marts, and governed reporting logic.",
+        "Added 82 quality tests so downstream dashboards and AI-assisted analysis stay tied to validated data.",
+        "Used Airflow, Kafka, Docker, and Cloud Run to make the workflow feel closer to production than a notebook-only project.",
+      ],
+      preview: {
+        type: "pipeline",
+        title: "Pipeline Front Door",
+        caption: "A compact view of how RetailIQ moves from raw retail records to modeled marts, forecasts, alerts, and executive-facing outputs.",
+      },
       tech: ["Python", "dbt", "Snowflake", "Airflow", "Kafka", "Streamlit", "Docker", "SQL", "OpenAI", "Demand Forecasting"],
       links: [
         { label: "GitHub", url: "https://github.com/Photon7777/retailiq-demand-intelligence" },
@@ -256,6 +270,7 @@ export const siteData = {
     },
     {
       title: "Forensic Analytics Dashboard",
+      slug: "forensic-analytics-dashboard",
       badge: "Best Data Scientist",
       image: "/project-images/ey-forensic.png",
       imageAlt: "Forensic analytics dashboard interface with workflow setup and case investigation modules",
@@ -274,14 +289,26 @@ export const siteData = {
         approach: "Combined Pandas EDA, anomaly detection, chronology checks, and field-level validation in Streamlit.",
         result: "Earned Best Data Scientist by surfacing invoice, assignment, and pre-release sales anomalies.",
       },
+      decisions: [
+        "Structured the app around investigator workflows rather than raw dataframe output.",
+        "Used chronological checks and field-level rules so anomaly flags were explainable to nontechnical reviewers.",
+        "Kept the Streamlit interface focused on evidence review, triage, and repeatable validation.",
+      ],
+      preview: {
+        type: "forensic",
+        title: "Anomaly Triage Snapshot",
+        caption: "A visual summary of invoice flags, pre-release anomalies, and line-item review volume from the case workflow.",
+      },
       tech: ["Python", "Pandas", "Streamlit", "Anomaly Detection", "EDA", "KPI Reporting"],
       links: [
         { label: "GitHub", url: "https://github.com/Photon7777/EY_APP" },
         { label: "Demo", url: "https://eyforensic.streamlit.app/" },
       ],
+      featured: true,
     },
     {
       title: "Mixalyzer - Marketing Mix Optimizer",
+      slug: "mixalyzer",
       badge: "MMM + GenAI",
       image: "/project-images/mixalyzer-dashboard.png",
       imageAlt: "Mixalyzer marketing mix optimization dashboard screenshot with KPI cards and budget planning controls",
@@ -301,14 +328,27 @@ export const siteData = {
         approach: "Built a Streamlit decision-support app with MMM modeling, adstock and saturation features, baseline comparison, budget optimization, confidence ranges, and grounded AI recommendations.",
         result: "Delivered a planning workflow with model trust badges, responsible AI checks, and exportable recommendations for growth, finance, and executive teams.",
       },
+      decisions: [
+        "Combined model diagnostics, budget simulation, and narrative recommendations in one Streamlit workflow.",
+        "Used baseline comparison and confidence ranges so optimization output reads as decision support, not a black box.",
+        "Kept GitHub and live demo access available for reviewers who want to inspect both code and product behavior.",
+      ],
+      preview: {
+        type: "mixalyzer",
+        title: "Interactive Scenario Preview",
+        caption: "Switch scenarios to preview how a marketer can compare allocation patterns before opening the full Streamlit app.",
+        liveEmbed: "https://mixalyzer.streamlit.app/?embed=true",
+      },
       tech: ["Python", "Streamlit", "Marketing Mix Modeling", "Ridge Regression", "Bayesian MMM", "OpenAI", "Excel Exports", "Responsible AI"],
       links: [
         { label: "GitHub", url: "https://github.com/Photon7777/marketing-mix-optimizer" },
         { label: "Demo", url: "https://mixalyzer.streamlit.app/" },
       ],
+      featured: true,
     },
     {
       title: "NexGen Agentic Platform",
+      slug: "nexgen-agentic-platform",
       badge: "Honorable Mention",
       image: "/project-images/nexgen-agentic-platform.png",
       imageAlt: "NexGen Agentic Platform Streamlit interface with chat input and study dashboard",
@@ -326,6 +366,16 @@ export const siteData = {
         problem: "Support context-aware learning workflows through an agentic AI application.",
         approach: "Built knowledge ingestion, vector storage, RAG, prompt engineering, and LLM agent flows.",
         result: "Delivered the full-stack platform as technical lead and earned an Honorable Mention.",
+      },
+      decisions: [
+        "Separated ingestion, vector retrieval, prompt workflows, and user-facing Streamlit interaction.",
+        "Designed the agent flow around context-aware learning tasks instead of generic chatbot behavior.",
+        "Led frontend, backend, and prompt engineering work across a 4-member team.",
+      ],
+      preview: {
+        type: "agentic",
+        title: "RAG Flow Preview",
+        caption: "A compact view of how knowledge ingestion, vector search, prompts, and agent responses fit together.",
       },
       tech: ["Streamlit", "LangChain", "LLM Agents", "RAG", "Prompt Engineering", "Vector Storage"],
       links: [

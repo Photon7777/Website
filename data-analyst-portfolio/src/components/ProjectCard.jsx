@@ -1,6 +1,7 @@
 import { motion as Motion } from "framer-motion";
 import { FiArrowUpRight, FiExternalLink, FiGithub, FiTrendingUp } from "react-icons/fi";
 import ButtonLink from "./ButtonLink";
+import ProjectPreview from "./ProjectPreview";
 
 const linkIcons = {
   GitHub: FiGithub,
@@ -11,6 +12,7 @@ const linkIcons = {
 export default function ProjectCard({ p }) {
   return (
     <Motion.article
+      id={`project-${p.slug}`}
       className={`card${p.featured ? " featured-card" : ""}`}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.18, ease: "easeOut" }}
@@ -53,6 +55,8 @@ export default function ProjectCard({ p }) {
 
       <p className="muted">{p.description}</p>
 
+      <ProjectPreview preview={p.preview} />
+
       {p.caseStudy ? (
         <div className="case-study">
           <div>
@@ -60,13 +64,24 @@ export default function ProjectCard({ p }) {
             <p>{p.caseStudy.problem}</p>
           </div>
           <div>
-            <span>Approach</span>
+            <span>What I Built</span>
             <p>{p.caseStudy.approach}</p>
           </div>
           <div>
-            <span>Result</span>
+            <span>Outcome</span>
             <p>{p.caseStudy.result}</p>
           </div>
+        </div>
+      ) : null}
+
+      {p.decisions?.length ? (
+        <div className="technical-decisions">
+          <span>Technical Decisions</span>
+          <ul>
+            {p.decisions.map((decision) => (
+              <li key={decision}>{decision}</li>
+            ))}
+          </ul>
         </div>
       ) : null}
 

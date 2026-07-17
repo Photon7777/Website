@@ -2,11 +2,13 @@ import "./styles/index.css";
 import Navbar from "./components/Navbar";
 import Section from "./components/Section";
 import ProjectCard from "./components/ProjectCard";
+import FeaturedProjectCard from "./components/FeaturedProjectCard";
 import Footer from "./components/Footer";
 import ButtonLink from "./components/ButtonLink";
 import SkillGroup from "./components/SkillGroup";
 import ExperienceCard from "./components/ExperienceCard";
 import MetricCard from "./components/MetricCard";
+import Reveal from "./components/Reveal";
 import { siteData } from "./data/siteData";
 import {
   FiArrowDown,
@@ -19,6 +21,9 @@ import {
 import { motion as Motion } from "framer-motion";
 
 export default function App() {
+  const featuredProjects = siteData.projects.filter((project) => project.featured).slice(0, 3);
+  const defaultResume = siteData.resumeVariants[0]?.url || siteData.resumeUrl;
+
   return (
     <div id="top">
       <Navbar name={siteData.displayName} resumeUrl="#resumes" />
@@ -32,25 +37,28 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <p className="kicker">{siteData.location}</p>
-              <h1>{siteData.displayName}</h1>
+              <p className="kicker">{siteData.displayName} • {siteData.location}</p>
+              <h1>{siteData.heroHook}</h1>
               <p className="role-line">{siteData.roleHeadline}</p>
               <div className="target-role-strip" aria-label="Target roles">
                 {siteData.targetRoles.map((role) => (
                   <span key={role.title}>{role.title}</span>
                 ))}
               </div>
-              <p className="subtitle">{siteData.summary[1]}</p>
+              <p className="subtitle">{siteData.heroLead}</p>
 
               <div className="hero-cta">
-                <ButtonLink href="#resumes" icon={FiDownload}>
-                  Resumes
+                <ButtonLink href={defaultResume} icon={FiDownload} target="_blank" rel="noreferrer">
+                  Resume PDF
                 </ButtonLink>
-                <ButtonLink href={siteData.github} icon={FiGithub} variant="ghost" target="_blank" rel="noreferrer">
-                  GitHub
+                <ButtonLink href={`mailto:${siteData.email}`} icon={FiMail} variant="ghost">
+                  Email
                 </ButtonLink>
                 <ButtonLink href={siteData.linkedin} icon={FiLinkedin} variant="ghost" target="_blank" rel="noreferrer">
                   LinkedIn
+                </ButtonLink>
+                <ButtonLink href={siteData.github} icon={FiGithub} variant="ghost" target="_blank" rel="noreferrer">
+                  GitHub
                 </ButtonLink>
                 <ButtonLink href="#projects" icon={FiArrowDown} variant="subtle">
                   Projects
@@ -77,6 +85,12 @@ export default function App() {
               <div className="profile-card-content">
                 <p className="eyebrow">Analytics Focus</p>
                 <h2>{siteData.headline}</h2>
+                <div className="signal-board" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </div>
                 <div className="featured-skill-row">
                   {siteData.featuredSkills.map((skill) => (
                     <span key={skill}>{skill}</span>
@@ -84,6 +98,28 @@ export default function App() {
                 </div>
               </div>
             </Motion.aside>
+          </div>
+        </section>
+
+        <section className="home-featured section-grid-bg" aria-labelledby="featured-work-title">
+          <div className="container">
+            <Reveal>
+              <div className="section-head home-featured-head">
+                <p className="eyebrow">Featured Work</p>
+                <h2 id="featured-work-title">Three projects that show the way I build.</h2>
+                <p className="muted">
+                  Each one has a visual preview, a short case-study narrative, and direct links to the live product or raw code.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.05}>
+              <div className="featured-project-grid">
+                {featuredProjects.map((project) => (
+                  <FeaturedProjectCard key={project.title} project={project} />
+                ))}
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -156,7 +192,7 @@ export default function App() {
           </Section>
 
           <Section id="projects" title="Projects" subtitle="Portfolio projects framed by problem, approach, and result.">
-            <div className="project-grid">
+            <div className="project-grid case-study-grid">
               {siteData.projects.map((project) => (
                 <ProjectCard key={project.title} p={project} />
               ))}
