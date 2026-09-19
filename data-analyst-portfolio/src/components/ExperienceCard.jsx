@@ -1,4 +1,4 @@
-import { FiBriefcase, FiCalendar, FiMapPin } from "react-icons/fi";
+import { FiBriefcase, FiMapPin } from "react-icons/fi";
 
 export default function ExperienceCard({ experience }) {
   return (
@@ -19,9 +19,6 @@ export default function ExperienceCard({ experience }) {
         <div className="experience-meta">
           <span>
             <FiMapPin aria-hidden="true" /> {experience.location}
-          </span>
-          <span>
-            <FiCalendar aria-hidden="true" /> {experience.period}
           </span>
         </div>
 

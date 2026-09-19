@@ -1,72 +1,123 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Section from "../components/Section";
-import ProjectIndexCard from "../components/ProjectIndexCard";
-import ProjectDeepDive from "../components/ProjectDeepDive";
-import ButtonLink from "../components/ButtonLink";
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { FiArrowUpRight, FiDownload } from "react-icons/fi";
 import { siteData } from "../data/siteData";
-import { FiArrowLeft, FiDownload, FiMail } from "react-icons/fi";
+import { projectDetails } from "../data/caseStudyData";
+import PortfolioProjectCard from "../components/PortfolioProjectCard";
+import Reveal from "../components/Reveal";
+import Contact from "../components/Contact";
 
+const filters = [
+  { id: "all", label: "All work" },
+  { id: "analysis", label: "Data analysis", resume: 0 },
+  { id: "analytics", label: "Analytics engineering", resume: 1 },
+  { id: "engineering", label: "Data engineering", resume: 2 },
+  { id: "ai", label: "Applied AI", resume: 0 },
+];
+function readFocus() {
+  const value = new URLSearchParams(window.location.search).get("focus");
+  return filters.some((filter) => filter.id === value) ? value : "all";
+}
 export default function ProjectsPage() {
-  const defaultResume = siteData.resumeVariants[0]?.url || siteData.resumeUrl;
-
+  const [focus, setFocus] = useState(readFocus);
+  useEffect(() => {
+    const update = () => setFocus(readFocus());
+    window.addEventListener("popstate", update);
+    return () => window.removeEventListener("popstate", update);
+  }, []);
+  const projects = siteData.projects.filter(
+    (project) =>
+      focus === "all" || projectDetails[project.slug].focus.includes(focus),
+  );
+  const resume =
+    siteData.resumeVariants[
+      filters.find((filter) => filter.id === focus)?.resume ?? 0
+    ];
+  function changeFocus(value) {
+    setFocus(value);
+    const url = new URL(window.location.href);
+    if (value === "all") url.searchParams.delete("focus");
+    else url.searchParams.set("focus", value);
+    window.history.pushState({}, "", url);
+  }
   return (
-    <div id="top">
-      <Navbar name={siteData.displayName} resumeUrl="/#resumes" />
-
-      <main>
-        <section className="projects-page-hero section-grid-bg">
-          <div className="container projects-page-hero-inner">
-            <div>
-              <p className="kicker">Project Portfolio</p>
-              <h1>Project work, without making the homepage carry everything.</h1>
-              <p className="subtitle">
-                A dedicated view for live demos, GitHub repos, compact summaries, and optional deep dives into the build decisions behind each project.
-              </p>
-            </div>
-
-            <div className="projects-page-actions">
-              <ButtonLink href="/#top" icon={FiArrowLeft} variant="ghost">
-                Back Home
-              </ButtonLink>
-              <ButtonLink href={defaultResume} icon={FiDownload} target="_blank" rel="noreferrer">
-                Resume PDF
-              </ButtonLink>
-              <ButtonLink href={`mailto:${siteData.email}`} icon={FiMail} variant="subtle">
-                Email
-              </ButtonLink>
-            </div>
-          </div>
-        </section>
-
+    <>
+      <section className="page-intro">
         <div className="container">
-          <Section
-            id="projects"
-            title="Project Index"
-            subtitle="Quick summaries first. Open a deep dive only when you want the full problem, build, outcome, and technical decisions."
-          >
-            <div className="project-index-grid">
-              {siteData.projects.map((project) => (
-                <ProjectIndexCard key={project.title} project={project} />
-              ))}
+          <Reveal>
+            <p className="eyebrow">Portfolio / 04 projects</p>
+            <h1>
+              Questions to answer.
+              <br />
+              <span>Systems to build.</span>
+            </h1>
+            <div className="page-intro-bottom">
+              <p>
+                Retail intelligence, forensic analysis, marketing decisions, and
+                AI learning. A closer look at what I built and why.
+              </p>
+              <a
+                className="text-link"
+                href={siteData.github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Explore GitHub <FiArrowUpRight />
+              </a>
             </div>
-          </Section>
-
-          <Section
-            id="case-studies"
-            title="Project Deep Dives"
-            subtitle="Collapsed by default so the page stays skimmable."
-          >
-            <div className="case-study-list">
-              {siteData.projects.map((project) => (
-                <ProjectDeepDive key={project.title} project={project} />
-              ))}
-            </div>
-          </Section>
+          </Reveal>
         </div>
-      </main>
-
-      <Footer />
-    </div>
+      </section>
+      <section className="section project-gallery">
+        <div className="container">
+          <div className="filter-toolbar">
+            <fieldset className="project-filters">
+              <legend className="sr-only">Filter projects by focus</legend>
+              {filters.map((filter) => (
+                <label key={filter.id}>
+                  <input
+                    type="radio"
+                    name="project-focus"
+                    value={filter.id}
+                    checked={focus === filter.id}
+                    onChange={() => changeFocus(filter.id)}
+                  />
+                  <span>{filter.label}</span>
+                </label>
+              ))}
+            </fieldset>
+            <span className="result-count" role="status">
+              {projects.length} {projects.length === 1 ? "project" : "projects"}
+            </span>
+          </div>
+          <div className="project-grid">
+            <AnimatePresence mode="popLayout">
+              {projects.map((project) => (
+                <PortfolioProjectCard
+                  key={project.slug}
+                  project={project}
+                  index={siteData.projects.indexOf(project)}
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+          <div className="gallery-resume">
+            <div>
+              <p className="eyebrow">Keep the conversation going</p>
+              <h2>
+                {focus === "all"
+                  ? "The experience behind the work."
+                  : resume.title.replace(" Resume", "") + " resume"}
+              </h2>
+            </div>
+            <a className="btn btn-ghost" href={resume.url} download>
+              <FiDownload />
+              Download resume
+            </a>
+          </div>
+        </div>
+      </section>
+      <Contact />
+    </>
   );
 }

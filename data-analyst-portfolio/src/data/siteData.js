@@ -2,27 +2,46 @@ export const siteData = {
   name: "Sai Praneeth Kathi Moksha Gnana",
   displayName: "Sai Praneeth",
   roleHeadline: "Data Analyst | Data Engineer | Analytics Engineer",
-  headline: "End-to-end data products | SQL pipelines • dbt • dashboards • AI analytics",
-  location: "College Park, MD (Open to Summer 2026 Internships)",
+  headline:
+    "End-to-end data products | SQL pipelines • dbt • dashboards • AI analytics",
+  location: "College Park, MD",
+  availability: "Seeking full-time data roles starting after December 2026.",
   phone: "(240) 886-7483",
   email: "lakhrav@umd.edu",
   linkedin: "https://www.linkedin.com/in/sai-praneeth-kmg",
   github: "https://github.com/Photon7777",
   resumeUrl: "/Resume_SaiPraneeth.pdf",
-  profileImage: "/profile-photo.jpg",
-  heroHook: "I build data products that turn messy business questions into trusted decisions.",
+  profileImage: "/profile-photo.webp",
+  heroHook:
+    "I build data products that turn messy business questions into trusted decisions.",
   heroLead:
     "I work across analytics, engineering, and applied AI: SQL models, dbt quality checks, orchestration, dashboards, and decision tools that recruiters can inspect from live apps or GitHub.",
 
   metrics: [
-    { label: "Experience", value: "1.5 years", detail: "analytics, pipelines, and reporting automation" },
-    { label: "RetailIQ Scale", value: "421K", detail: "sales rows modeled across 45 stores" },
-    { label: "Data Quality", value: "82", detail: "dbt tests across analytics models" },
-    { label: "Business Impact", value: "$20M", detail: "growth opportunities surfaced" },
+    {
+      label: "Experience",
+      value: "2 years",
+      detail: "across analytics and software engineering",
+    },
+    {
+      label: "RetailIQ Scale",
+      value: "421K",
+      detail: "sales rows modeled across 45 stores",
+    },
+    {
+      label: "Data Quality",
+      value: "77",
+      detail: "declared dbt checks in the public repository",
+    },
+    {
+      label: "Business Impact",
+      value: "$20M",
+      detail: "growth opportunities surfaced",
+    },
   ],
 
   summary: [
-    "MSIS graduate student with 1.5 years of experience turning messy retail data into SQL pipelines, governed models, dashboards, and stakeholder-ready insights.",
+    "MSIS graduate student with 2 years of experience across analytics and software engineering, turning messy retail data into SQL pipelines, governed models, dashboards, and stakeholder-ready insights.",
     "I build analytics systems end to end: ingestion workflows, dbt/Snowflake models, quality checks, BI dashboards, forecasting outputs, and AI-assisted analysis.",
   ],
 
@@ -35,7 +54,8 @@ export const siteData = {
     },
     {
       school: "Dayananda Sagar University",
-      degree: "Bachelor of Technology, Electronics & Communications Engineering",
+      degree:
+        "Bachelor of Technology, Electronics & Communications Engineering",
       date: "Oct 2023",
       location: "Bengaluru, India",
     },
@@ -44,26 +64,39 @@ export const siteData = {
   quickFacts: [
     "MSIS at University of Maryland, College Park",
     "Retail analytics experience across BigQuery, Snowflake, Tableau, and SQL validation",
-    "Targeting Data Analyst, Data Engineer, and Analytics Engineer internship roles",
+    "Seeking full-time Data Analyst, Data Engineer, and Analytics Engineer roles starting after December 2026",
   ],
 
   targetRoles: [
     {
       title: "Data Analyst",
-      summary: "Builds KPI reporting, dashboards, forecasting views, and stakeholder-ready analysis from large-scale retail data.",
-      evidence: "$20M in stakeholder-validated growth opportunities flagged from Walmart retail data.",
+      summary:
+        "Builds KPI reporting, dashboards, forecasting views, and stakeholder-ready analysis from large-scale retail data.",
+      evidence:
+        "$20M in stakeholder-validated growth opportunities flagged from Walmart retail data.",
       tools: ["SQL", "Python", "BigQuery", "Tableau", "Power BI", "Excel"],
     },
     {
       title: "Analytics Engineer",
-      summary: "Models trusted data layers with dbt, Snowflake, validation checks, governed marts, and documented business logic.",
-      evidence: "RetailIQ includes 16 dbt models, 82 data quality tests, and governed Snowflake SQL access.",
-      tools: ["dbt", "Snowflake", "SQL validation", "Data quality", "Marts", "Documentation"],
+      summary:
+        "Models trusted data layers with dbt, Snowflake, validation checks, governed marts, and documented business logic.",
+      evidence:
+        "RetailIQ's public repository includes 15 dbt models, 77 declared data quality checks, and governed Snowflake SQL access.",
+      tools: [
+        "dbt",
+        "Snowflake",
+        "SQL validation",
+        "Data quality",
+        "Marts",
+        "Documentation",
+      ],
     },
     {
       title: "Data Engineer",
-      summary: "Designs ingestion and orchestration workflows that move data reliably into analytics-ready platforms.",
-      evidence: "RetailIQ uses a 9-step Airflow DAG, Kafka streaming layer, Docker, and Google Cloud Run deployment.",
+      summary:
+        "Designs ingestion and orchestration workflows that move data reliably into analytics-ready platforms.",
+      evidence:
+        "RetailIQ uses a 9-step Airflow DAG, Kafka streaming layer, Docker, and Google Cloud Run deployment.",
       tools: ["Airflow", "Kafka", "Docker", "GCS", "Cloud Run", "BigQuery"],
     },
   ],
@@ -72,19 +105,22 @@ export const siteData = {
     {
       title: "Data Analyst Resume",
       url: "/Resume_Sai_Praneeth_Kathi_Moksha_Gnana_Data_Analyst.pdf",
-      description: "Best for BI, KPI reporting, SQL analysis, Tableau/Power BI, and stakeholder insight roles.",
+      description:
+        "Best for BI, KPI reporting, SQL analysis, Tableau/Power BI, and stakeholder insight roles.",
       tags: ["SQL", "Tableau", "BigQuery", "Power BI"],
     },
     {
       title: "Analytics Engineer Resume",
       url: "/Resume_Sai_Praneeth_Kathi_Moksha_Gnana_Analytics_Engineer.pdf",
-      description: "Best for dbt, Snowflake, data modeling, quality tests, governed marts, and analytics infrastructure roles.",
+      description:
+        "Best for dbt, Snowflake, data modeling, quality tests, governed marts, and analytics infrastructure roles.",
       tags: ["dbt", "Snowflake", "SQL models", "Data quality"],
     },
     {
       title: "Data Engineer Resume",
       url: "/Resume_Sai_Praneeth_Kathi_Moksha_Gnana_Data_Engineer.pdf",
-      description: "Best for pipeline, orchestration, ingestion, Kafka, Airflow, Docker, and cloud data roles.",
+      description:
+        "Best for pipeline, orchestration, ingestion, Kafka, Airflow, Docker, and cloud data roles.",
       tags: ["Airflow", "Kafka", "Docker", "Pipelines"],
     },
   ],
@@ -92,19 +128,49 @@ export const siteData = {
   skillMatrix: [
     {
       title: "Analytics",
-      items: ["SQL", "Python", "BigQuery", "Tableau", "Power BI", "Excel", "KPI Reporting"],
+      items: [
+        "SQL",
+        "Python",
+        "BigQuery",
+        "Tableau",
+        "Power BI",
+        "Excel",
+        "KPI Reporting",
+      ],
     },
     {
       title: "Analytics Engineering",
-      items: ["dbt", "Snowflake", "SQL Validation", "Data Quality Tests", "Governed Marts", "Documentation"],
+      items: [
+        "dbt",
+        "Snowflake",
+        "SQL Validation",
+        "Data Quality Tests",
+        "Governed Marts",
+        "Documentation",
+      ],
     },
     {
       title: "Data Engineering",
-      items: ["Airflow", "Kafka", "Docker", "Cloud Run", "GCS", "BigQuery Ingestion", "ETL/ELT"],
+      items: [
+        "Airflow",
+        "Kafka",
+        "Docker",
+        "Cloud Run",
+        "GCS",
+        "BigQuery Ingestion",
+        "ETL/ELT",
+      ],
     },
     {
       title: "AI / ML Analytics",
-      items: ["RAG", "LangChain", "LLM APIs", "Forecasting", "Anomaly Detection", "Prompt Engineering"],
+      items: [
+        "RAG",
+        "LangChain",
+        "LLM APIs",
+        "Forecasting",
+        "Anomaly Detection",
+        "Prompt Engineering",
+      ],
     },
   ],
 
@@ -169,14 +235,7 @@ export const siteData = {
       "PowerPoint",
       "Streamlit",
     ],
-    Tools: [
-      "Git/GitHub",
-      "Docker",
-      "JIRA",
-      "Confluence",
-      "dbt",
-      "OpenAI",
-    ],
+    Tools: ["Git/GitHub", "Docker", "JIRA", "Confluence", "dbt", "OpenAI"],
     "Soft Skills": [
       "Stakeholder Communication",
       "Cross-functional Collaboration",
@@ -212,7 +271,15 @@ export const siteData = {
         "Converted ad-hoc BigQuery reports into scheduled SQL workflows that refreshed KPI tables nightly with deduplication checks, reducing reporting time from 2 days to 6 hours.",
         "Built Tableau time-series benchmarks to compare product, category, and vendor performance against historical baselines, summarizing outliers in Excel KPI trackers.",
       ],
-      tools: ["Python", "SQL", "BigQuery", "Pandas", "Tableau", "Excel", "Data Validation"],
+      tools: [
+        "Python",
+        "SQL",
+        "BigQuery",
+        "Pandas",
+        "Tableau",
+        "Excel",
+        "Data Validation",
+      ],
     },
     {
       company: "Shazab Future Tech Solutions",
@@ -230,50 +297,75 @@ export const siteData = {
   projects: [
     {
       title: "RetailIQ - Retail Analytics Intelligence Platform",
+      shortTitle: "RetailIQ",
       slug: "retailiq",
       badge: "Flagship data product",
-      image: "/project-images/retailiq-dashboard.png",
-      imageAlt: "RetailIQ home dashboard screenshot showing the Snowflake-backed retail command center",
+      image: "/project-images/retailiq-dashboard.webp",
+      imageAlt:
+        "RetailIQ home dashboard screenshot showing the Snowflake-backed retail command center",
       tags: ["Data Engineering", "Analytics Engineering", "BI"],
       highlights: [
         { label: "Sales Rows", value: "421K" },
         { label: "Forecast Rows", value: "425K" },
-        { label: "dbt Models", value: "16" },
-        { label: "Quality Tests", value: "82" },
+        { label: "dbt Models", value: "15" },
+        { label: "Declared dbt Checks", value: "77" },
         { label: "Airflow DAG", value: "9-step" },
       ],
       impact:
         "Architected a Snowflake-backed retail platform that generates forecasts, stockout risk, anomaly outputs, and executive dashboards.",
       description:
-        "Built a cloud-native analytics product with dbt models, 82 quality tests, a 9-step Airflow DAG, Dockerized Kafka streaming, Streamlit, Google Cloud Run, and OpenAI-powered governed analysis.",
+        "Built a cloud-native analytics product with dbt models, 77 declared quality checks, optional Airflow orchestration and local Kafka streaming, Streamlit, Google Cloud Run, and OpenAI-powered governed analysis.",
       caseStudy: {
-        problem: "Turn Walmart sales data into reliable demand, stockout, anomaly, and KPI intelligence.",
-        approach: "Modeled Snowflake marts with dbt, orchestrated workflows in Airflow, streamed sales events through Kafka, and exposed dashboards in Streamlit.",
-        result: "Processed 421K sales rows across 45 stores and generated 425K forecast rows plus stockout-risk and anomaly output tables.",
+        problem:
+          "Turn Walmart sales data into reliable demand, stockout, anomaly, and KPI intelligence.",
+        approach:
+          "Modeled Snowflake marts with dbt, orchestrated workflows in Airflow, streamed sales events through Kafka, and exposed dashboards in Streamlit.",
+        result:
+          "Processed 421K sales rows across 45 stores and generated 425K forecast rows plus stockout-risk and anomaly output tables.",
       },
       decisions: [
         "Used Snowflake and dbt to separate ingestion, staging, marts, and governed reporting logic.",
-        "Added 82 quality tests so downstream dashboards and AI-assisted analysis stay tied to validated data.",
+        "Declared 77 dbt quality checks so downstream dashboards and AI-assisted analysis stay tied to validated data.",
         "Used Airflow, Kafka, Docker, and Cloud Run to make the workflow feel closer to production than a notebook-only project.",
       ],
       preview: {
         type: "pipeline",
         title: "Pipeline Front Door",
-        caption: "A compact view of how RetailIQ moves from raw retail records to modeled marts, forecasts, alerts, and executive-facing outputs.",
+        caption:
+          "A compact view of how RetailIQ moves from raw retail records to modeled marts, forecasts, alerts, and executive-facing outputs.",
       },
-      tech: ["Python", "dbt", "Snowflake", "Airflow", "Kafka", "Streamlit", "Docker", "SQL", "OpenAI", "Demand Forecasting"],
+      tech: [
+        "Python",
+        "dbt",
+        "Snowflake",
+        "Airflow",
+        "Kafka",
+        "Streamlit",
+        "Docker",
+        "SQL",
+        "OpenAI",
+        "Demand Forecasting",
+      ],
       links: [
-        { label: "GitHub", url: "https://github.com/Photon7777/retailiq-demand-intelligence" },
-        { label: "Demo", url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/" },
+        {
+          label: "GitHub",
+          url: "https://github.com/Photon7777/retailiq-demand-intelligence",
+        },
+        {
+          label: "Demo",
+          url: "https://retailiq-demand-intelligence-420746557396.us-central1.run.app/",
+        },
       ],
       featured: true,
     },
     {
       title: "Forensic Analytics Dashboard",
+      shortTitle: "Forensic Analytics",
       slug: "forensic-analytics-dashboard",
       badge: "Best Data Scientist",
-      image: "/project-images/ey-forensic.png",
-      imageAlt: "Forensic analytics dashboard interface with workflow setup and case investigation modules",
+      image: "/project-images/ey-forensic.webp",
+      imageAlt:
+        "Forensic analytics dashboard interface with workflow setup and case investigation modules",
       tags: ["Data Analysis", "Validation", "Anomaly Detection"],
       highlights: [
         { label: "Invoices Flagged", value: "45.2%" },
@@ -285,9 +377,12 @@ export const siteData = {
       description:
         "Built a Streamlit forensic analytics dashboard for EY's “Swindle in the Age of AI” challenge using Pandas EDA, anomaly detection, chronological checks, and field-level validation.",
       caseStudy: {
-        problem: "Validate whether winery operations data showed signs of fabrication.",
-        approach: "Combined Pandas EDA, anomaly detection, chronology checks, and field-level validation in Streamlit.",
-        result: "Earned Best Data Scientist by surfacing invoice, assignment, and pre-release sales anomalies.",
+        problem:
+          "Validate whether winery operations data showed signs of fabrication.",
+        approach:
+          "Combined Pandas EDA, anomaly detection, chronology checks, and field-level validation in Streamlit.",
+        result:
+          "Earned Best Data Scientist by surfacing invoice, assignment, and pre-release sales anomalies.",
       },
       decisions: [
         "Structured the app around investigator workflows rather than raw dataframe output.",
@@ -297,9 +392,17 @@ export const siteData = {
       preview: {
         type: "forensic",
         title: "Anomaly Triage Snapshot",
-        caption: "A visual summary of invoice flags, pre-release anomalies, and line-item review volume from the case workflow.",
+        caption:
+          "A visual summary of invoice flags, pre-release anomalies, and line-item review volume from the case workflow.",
       },
-      tech: ["Python", "Pandas", "Streamlit", "Anomaly Detection", "EDA", "KPI Reporting"],
+      tech: [
+        "Python",
+        "Pandas",
+        "Streamlit",
+        "Anomaly Detection",
+        "EDA",
+        "KPI Reporting",
+      ],
       links: [
         { label: "GitHub", url: "https://github.com/Photon7777/EY_APP" },
         { label: "Demo", url: "https://eyforensic.streamlit.app/" },
@@ -308,10 +411,12 @@ export const siteData = {
     },
     {
       title: "Mixalyzer - Marketing Mix Optimizer",
+      shortTitle: "Mixalyzer",
       slug: "mixalyzer",
       badge: "MMM + GenAI",
-      image: "/project-images/mixalyzer-dashboard.png",
-      imageAlt: "Mixalyzer marketing mix optimization dashboard screenshot with KPI cards and budget planning controls",
+      image: "/project-images/mixalyzer-dashboard.webp",
+      imageAlt:
+        "Mixalyzer marketing mix optimization dashboard screenshot with KPI cards and budget planning controls",
       tags: ["Data Analysis", "AI Analytics", "Business Optimization"],
       highlights: [
         { label: "Model Trust", value: "MAPE" },
@@ -324,9 +429,12 @@ export const siteData = {
       description:
         "Mixalyzer helps growth teams upload marketing data, evaluate readiness, train marketing mix models, compare baselines, simulate spend changes, optimize allocation, and export executive-ready evidence.",
       caseStudy: {
-        problem: "Marketing teams need to know which channels drive incremental revenue and where the next budget dollar should go.",
-        approach: "Built a Streamlit decision-support app with MMM modeling, adstock and saturation features, baseline comparison, budget optimization, confidence ranges, and grounded AI recommendations.",
-        result: "Delivered a planning workflow with model trust badges, responsible AI checks, and exportable recommendations for growth, finance, and executive teams.",
+        problem:
+          "Marketing teams need to know which channels drive incremental revenue and where the next budget dollar should go.",
+        approach:
+          "Built a Streamlit decision-support app with MMM modeling, adstock and saturation features, baseline comparison, budget optimization, confidence ranges, and grounded AI recommendations.",
+        result:
+          "Delivered a planning workflow with model trust badges, responsible AI checks, and exportable recommendations for growth, finance, and executive teams.",
       },
       decisions: [
         "Combined model diagnostics, budget simulation, and narrative recommendations in one Streamlit workflow.",
@@ -336,22 +444,37 @@ export const siteData = {
       preview: {
         type: "mixalyzer",
         title: "Interactive Scenario Preview",
-        caption: "Switch scenarios to preview how a marketer can compare allocation patterns before opening the full Streamlit app.",
+        caption:
+          "Switch scenarios to preview how a marketer can compare allocation patterns before opening the full Streamlit app.",
         liveEmbed: "https://mixalyzer.streamlit.app/?embed=true",
       },
-      tech: ["Python", "Streamlit", "Marketing Mix Modeling", "Ridge Regression", "Bayesian MMM", "OpenAI", "Excel Exports", "Responsible AI"],
+      tech: [
+        "Python",
+        "Streamlit",
+        "Marketing Mix Modeling",
+        "Ridge Regression",
+        "Bayesian MMM",
+        "OpenAI",
+        "Excel Exports",
+        "Responsible AI",
+      ],
       links: [
-        { label: "GitHub", url: "https://github.com/Photon7777/marketing-mix-optimizer" },
+        {
+          label: "GitHub",
+          url: "https://github.com/Photon7777/marketing-mix-optimizer",
+        },
         { label: "Demo", url: "https://mixalyzer.streamlit.app/" },
       ],
       featured: true,
     },
     {
       title: "NexGen Agentic Platform",
+      shortTitle: "NexGen",
       slug: "nexgen-agentic-platform",
       badge: "Honorable Mention",
-      image: "/project-images/nexgen-agentic-platform.png",
-      imageAlt: "NexGen Agentic Platform Streamlit interface with chat input and study dashboard",
+      image: "/project-images/nexgen-agentic-platform.webp",
+      imageAlt:
+        "NexGen Agentic Platform Streamlit interface with chat input and study dashboard",
       tags: ["AI", "RAG", "LLM Agents"],
       highlights: [
         { label: "Team", value: "4" },
@@ -363,9 +486,12 @@ export const siteData = {
       description:
         "Architected a full-stack agentic application using Streamlit, LangChain, LLM agents, and RAG, building pipelines for knowledge ingestion, vector storage, and retrieval.",
       caseStudy: {
-        problem: "Support context-aware learning workflows through an agentic AI application.",
-        approach: "Built knowledge ingestion, vector storage, RAG, prompt engineering, and LLM agent flows.",
-        result: "Delivered the full-stack platform as technical lead and earned an Honorable Mention.",
+        problem:
+          "Support context-aware learning workflows through an agentic AI application.",
+        approach:
+          "Built knowledge ingestion, vector storage, RAG, prompt engineering, and LLM agent flows.",
+        result:
+          "Delivered the full-stack platform as technical lead and earned an Honorable Mention.",
       },
       decisions: [
         "Separated ingestion, vector retrieval, prompt workflows, and user-facing Streamlit interaction.",
@@ -375,9 +501,17 @@ export const siteData = {
       preview: {
         type: "agentic",
         title: "RAG Flow Preview",
-        caption: "A compact view of how knowledge ingestion, vector search, prompts, and agent responses fit together.",
+        caption:
+          "A compact view of how knowledge ingestion, vector search, prompts, and agent responses fit together.",
       },
-      tech: ["Streamlit", "LangChain", "LLM Agents", "RAG", "Prompt Engineering", "Vector Storage"],
+      tech: [
+        "Streamlit",
+        "LangChain",
+        "LLM Agents",
+        "RAG",
+        "Prompt Engineering",
+        "Vector Storage",
+      ],
       links: [
         { label: "GitHub", url: "https://github.com/Photon7777/NexGen_Deploy" },
         { label: "Demo", url: "https://nexgen-ai.streamlit.app/" },

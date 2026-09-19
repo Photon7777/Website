@@ -1,106 +1,99 @@
 import { useEffect, useState } from "react";
-import { FiExternalLink, FiMenu, FiX } from "react-icons/fi";
+import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
+import ResumeMenu from "./ResumeMenu";
 
 const items = [
-  { id: "home", label: "Home", href: "/#top" },
-  { id: "projects", label: "Projects", href: "/projects" },
-  { id: "skills", label: "Skills", href: "/#skills" },
-  { id: "experience", label: "Experience", href: "/#experience" },
-  { id: "contact", label: "Contact", href: "/#contact" },
+  { label: "Home", href: "/", path: "/" },
+  { label: "Projects", href: "/projects", path: "/projects" },
+  { label: "About", href: "/about", path: "/about" },
+  { label: "Skills", href: "/#skills", hash: "#skills" },
+  { label: "Contact", href: "/#contact", hash: "#contact" },
 ];
 
-export default function Navbar({ name, resumeUrl }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeId, setActiveId] = useState("home");
-  const isResumeAnchor = resumeUrl?.startsWith("#") || resumeUrl?.startsWith("/#");
-
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [hash, setHash] = useState(window.location.hash);
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
   useEffect(() => {
-    const updateActive = () => {
-      if (window.location.pathname.startsWith("/projects")) {
-        setActiveId("projects");
-        return;
-      }
-
-      if (window.scrollY < 220) {
-        setActiveId("home");
-        return;
-      }
-
-      const anchor = Math.min(window.innerHeight * 0.42, 360);
-      const current = items.reduce((latest, item) => {
-        const hash = item.href.includes("#") ? item.href.split("#")[1] : "";
-        const section = hash ? document.querySelector(`#${hash}`) : null;
-        const rect = section?.getBoundingClientRect();
-        if (rect && rect.top <= anchor && rect.bottom > anchor) {
-          return item.id;
-        }
-        return latest;
-      }, "home");
-
-      setActiveId(current);
+    const close = (event) => {
+      if (event.key === "Escape") setOpen(false);
     };
-
-    updateActive();
-    window.addEventListener("scroll", updateActive, { passive: true });
-    window.addEventListener("hashchange", updateActive);
+    const update = () => {
+      setHash(window.location.hash);
+      setOpen(false);
+    };
+    const trackSection = () => {
+      if (window.location.pathname !== "/") return;
+      const anchor = Math.min(window.innerHeight * 0.3, 200);
+      const current = ["contact", "skills"].find((id) => {
+        const bounds = document.getElementById(id)?.getBoundingClientRect();
+        return bounds && bounds.top <= anchor && bounds.bottom > anchor;
+      });
+      setHash(current ? `#${current}` : "");
+    };
+    window.addEventListener("keydown", close);
+    window.addEventListener("hashchange", update);
+    window.addEventListener("scroll", trackSection, { passive: true });
     return () => {
-      window.removeEventListener("scroll", updateActive);
-      window.removeEventListener("hashchange", updateActive);
+      window.removeEventListener("keydown", close);
+      window.removeEventListener("hashchange", update);
+      window.removeEventListener("scroll", trackSection);
     };
   }, []);
-
   return (
-    <header className="nav">
+    <header className="nav" id="top">
       <div className="container nav-inner">
-        <a className="brand" href="/#top">{name}</a>
-
-        <nav className="nav-links">
-          {items.map((it) => (
-            <a
-              key={it.href}
-              href={it.href}
-              className={activeId === it.id ? "active" : ""}
-              aria-current={activeId === it.id ? "page" : undefined}
-            >
-              {it.label}
-            </a>
-          ))}
+        <a className="brand" href="/" aria-label="Sai Praneeth home">
+          <span className="brand-symbol" aria-hidden="true">
+            sp.
+          </span>
+          <span>Sai Praneeth</span>
+        </a>
+        <nav className="nav-links" aria-label="Main navigation">
+          {items.map((item) => {
+            const active = item.hash
+              ? path === "/" && hash === item.hash
+              : item.path === "/"
+                ? path === "/" && !["#skills", "#contact"].includes(hash)
+                : path.startsWith(item.path);
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
-
         <div className="nav-actions">
-          <a
-            className="btn btn-ghost"
-            href={resumeUrl}
-            target={isResumeAnchor ? undefined : "_blank"}
-            rel={isResumeAnchor ? undefined : "noreferrer"}
-          >
-            Resumes {isResumeAnchor ? null : <FiExternalLink aria-hidden="true" />}
-          </a>
+          <ResumeMenu compact />
           <button
             className="icon-btn mobile-toggle"
             type="button"
-            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={isMenuOpen}
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-expanded={open}
             aria-controls="mobile-menu"
-            onClick={() => setIsMenuOpen((open) => !open)}
+            onClick={() => setOpen(!open)}
           >
-            {isMenuOpen ? <FiX /> : <FiMenu />}
+            {open ? <FiX /> : <FiMenu />}
           </button>
         </div>
-
-        <nav id="mobile-menu" className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
-          {items.map((it) => (
-            <a
-              key={it.href}
-              href={it.href}
-              className={activeId === it.id ? "active" : ""}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {it.label}
-            </a>
-          ))}
-        </nav>
       </div>
+      <nav
+        id="mobile-menu"
+        className={`mobile-menu ${open ? "is-open" : ""}`}
+        aria-label="Mobile navigation"
+        inert={!open}
+      >
+        {items.map((item) => (
+          <a key={item.label} href={item.href} onClick={() => setOpen(false)}>
+            {item.label}
+            <FiArrowUpRight aria-hidden="true" />
+          </a>
+        ))}
+      </nav>
     </header>
   );
 }
