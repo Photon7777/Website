@@ -1,17 +1,28 @@
 :root {
   font-family: "Inter", sans-serif;
-  color: #202724;
-  background: #fbfcfb;
+  color: var(--ink);
+  background: var(--paper);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --ink: #202724;
-  --muted: #626e68;
-  --line: #dce3de;
-  --paper: #fbfcfb;
-  --green: #006d5b;
-  --mint: #97e6c2;
-  --dark: #17211e;
+  --ink: #202228;
+  --muted: #606570;
+  --line: #dce0e7;
+  --paper: #fafbfc;
+  --accent: #2457e8;
+  --accent-hover: #1c43b8;
+  --accent-soft: #eef2ff;
+  --accent-selected: #eaf0ff;
+  --highlight: #a8c5ff;
+  --highlight-hover: #c5d8ff;
+  --dark: #18191c;
+  --dark-text: #f5f7fb;
+  --dark-muted: #b5bac4;
+  --dark-line: #3c4049;
+  --dark-border: #606776;
+  --dark-hover: #2a2d33;
+  --surface: #f0f2f5;
+  --surface-subtle: #f5f6f8;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 * {
@@ -79,7 +90,7 @@ summary {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid #168776;
+  outline: 2px solid var(--accent);
 }
 .container {
   width: min(1184px, calc(100% - 80px));
@@ -97,7 +108,7 @@ summary:focus-visible {
   color: var(--muted);
 }
 .eyebrow span {
-  color: var(--green);
+  color: var(--accent);
 }
 .muted {
   color: var(--muted);
@@ -117,7 +128,7 @@ summary:focus-visible {
   transform: translate(3px, -3px);
 }
 .text-link:hover {
-  color: var(--green);
+  color: var(--accent);
 }
 .section-heading {
   display: flex;
@@ -151,7 +162,7 @@ summary:focus-visible {
   padding: 12px 19px;
   border: 1px solid transparent;
   border-radius: 4px;
-  background: var(--green);
+  background: var(--accent);
   color: #fff;
   font-size: 13px;
   font-weight: 600;
@@ -167,9 +178,9 @@ summary:focus-visible {
   height: 17px;
 }
 .btn:hover {
-  background: #005244;
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px #006d5b15;
+  box-shadow: 0 5px 15px #2457e815;
 }
 .btn-ghost {
   border-color: var(--line);
@@ -177,12 +188,12 @@ summary:focus-visible {
   color: var(--ink);
 }
 .btn-ghost:hover {
-  color: var(--green);
-  background: #edf3ef;
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 .btn-subtle {
-  background: #e9f1ed;
-  color: var(--green);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 .icon-btn {
   display: inline-flex;
@@ -202,7 +213,7 @@ summary:focus-visible {
   top: 8px;
   left: 8px;
   padding: 12px;
-  background: var(--green);
+  background: var(--accent);
   color: white;
   transform: translateY(-180%);
 }
@@ -213,7 +224,7 @@ summary:focus-visible {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #fbfcfbf5;
+  background: #fafbfcf5;
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
@@ -235,7 +246,7 @@ summary:focus-visible {
 .brand-symbol {
   font-family: "Manrope", sans-serif;
   font-size: 26px;
-  color: var(--green);
+  color: var(--accent);
 }
 .nav-links {
   display: flex;
@@ -257,7 +268,7 @@ summary:focus-visible {
   bottom: 6px;
   left: 0;
   width: 100%;
-  background: var(--green);
+  background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s var(--ease);
@@ -307,7 +318,7 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 10px;
-  box-shadow: 0 15px 40px #17211e20;
+  box-shadow: 0 15px 40px #18191c20;
   color: var(--ink);
 }
 .resume-options > .eyebrow {
@@ -323,15 +334,15 @@ summary:focus-visible {
   border-radius: 3px;
 }
 .resume-options > a:hover {
-  background: #e9f1ed;
-  color: var(--green);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 .intro .resume-options .eyebrow {
   color: var(--muted);
 }
 .intro {
   background: var(--dark);
-  color: #f5f9f6;
+  color: var(--dark-text);
   padding: 35px 0 0;
   position: relative;
 }
@@ -342,11 +353,11 @@ summary:focus-visible {
   margin-bottom: 24px;
 }
 .intro .eyebrow {
-  color: #a3b9ae;
+  color: var(--dark-muted);
 }
 .location-label {
   font-size: 11px;
-  color: #a3b9ae;
+  color: var(--dark-muted);
 }
 .intro h1 {
   font-size: 94px;
@@ -354,7 +365,7 @@ summary:focus-visible {
   font-weight: 600;
 }
 .accent-dot {
-  color: var(--mint);
+  color: var(--highlight);
 }
 .name-reveal {
   display: flex;
@@ -383,11 +394,11 @@ summary:focus-visible {
   flex-shrink: 0;
 }
 .intro-description h2 span {
-  color: var(--mint);
+  color: var(--highlight);
 }
 .intro-description > p {
   font-size: 14px;
-  color: #bdccc4;
+  color: #c7cbd4;
   max-width: 370px;
 }
 .intro-actions {
@@ -398,18 +409,18 @@ summary:focus-visible {
   margin-bottom: 36px;
 }
 .intro .btn:not(.btn-ghost) {
-  background: var(--mint);
+  background: var(--highlight);
   color: var(--dark);
 }
 .intro .btn:not(.btn-ghost):hover {
-  background: #baf6d8;
+  background: var(--highlight-hover);
 }
 .intro .btn-ghost {
-  color: #f4f8f5;
-  border-color: #506158;
+  color: var(--dark-text);
+  border-color: var(--dark-border);
 }
 .intro .btn-ghost:hover {
-  background: #2a3932;
+  background: var(--dark-hover);
 }
 .social-links {
   display: flex;
@@ -421,30 +432,30 @@ summary:focus-visible {
   height: 42px;
   display: grid;
   place-items: center;
-  color: #c5d4cb;
+  color: #c7cbd4;
   font-size: 18px;
   transition:
     color 0.2s,
     transform 0.2s;
 }
 .social-links a:hover {
-  color: var(--mint);
+  color: var(--highlight);
   transform: translateY(-3px);
 }
 .intro-bottom {
-  border-top: 1px solid #3a4a42;
+  border-top: 1px solid var(--dark-line);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
   padding: 20px 0;
   font-size: 11px;
-  color: #adbbb3;
+  color: var(--dark-muted);
 }
 .intro-bottom b {
   padding: 0 12px;
   font-weight: 400;
-  color: #62776b;
+  color: #9098a8;
 }
 .intro-bottom a {
   display: inline-flex;
@@ -453,7 +464,7 @@ summary:focus-visible {
   white-space: nowrap;
 }
 .intro-bottom a svg {
-  color: var(--mint);
+  color: var(--highlight);
 }
 .selected-grid {
   display: grid;
@@ -466,7 +477,7 @@ summary:focus-visible {
 .project-image {
   position: relative;
   aspect-ratio: 16/10;
-  background: #e7ece8;
+  background: #e9ecf2;
   padding: 22px;
   overflow: hidden;
   border-radius: 6px;
@@ -477,7 +488,7 @@ summary:focus-visible {
   object-fit: contain;
   transition: transform 0.65s var(--ease);
   border-radius: 3px;
-  box-shadow: 0 8px 22px #17211e1a;
+  box-shadow: 0 8px 22px #18191c1a;
 }
 .project-forensic-analytics-dashboard {
   background: #e9e8f0;
@@ -528,7 +539,7 @@ summary:focus-visible {
   font:
     11px "JetBrains Mono",
     monospace;
-  color: #829188;
+  color: var(--muted);
 }
 .selected-project h3 {
   font-size: 26px;
@@ -549,7 +560,7 @@ summary:focus-visible {
   margin-top: 20px;
   padding-top: 16px;
   font-size: 11px;
-  color: var(--green);
+  color: var(--accent);
   font-weight: 600;
 }
 .selected-outcome svg {
@@ -559,7 +570,7 @@ summary:focus-visible {
   transform: translateX(4px);
 }
 .proof-band {
-  background: #eef2ee;
+  background: var(--surface);
   padding: 35px 0;
 }
 .proof-grid {
@@ -569,7 +580,7 @@ summary:focus-visible {
   align-items: center;
 }
 .proof-grid > div:not(:first-child) {
-  border-left: 1px solid #d1dbd3;
+  border-left: 1px solid var(--line);
   padding-left: 28px;
 }
 .proof-grid strong {
@@ -618,7 +629,7 @@ summary:focus-visible {
   place-items: center;
   width: 28px;
   height: 28px;
-  color: var(--green);
+  color: var(--accent);
 }
 .skill-list {
   display: flex;
@@ -629,18 +640,18 @@ summary:focus-visible {
   font-size: 11px;
   line-height: 1.5;
   padding: 4px 8px;
-  border: 1px solid #dce3de;
+  border: 1px solid var(--line);
   border-radius: 3px;
-  color: #58685f;
-  background: #f6f8f5;
+  color: var(--muted);
+  background: var(--surface-subtle);
 }
 .contact-band {
   background: var(--dark);
-  color: #f5f9f6;
+  color: var(--dark-text);
   padding: 60px 0;
 }
 .contact-band .eyebrow {
-  color: var(--mint);
+  color: var(--highlight);
 }
 .contact-heading {
   display: flex;
@@ -659,7 +670,7 @@ summary:focus-visible {
   place-items: center;
   width: 66px;
   height: 66px;
-  border: 1px solid #62756a;
+  border: 1px solid var(--dark-border);
   border-radius: 50%;
   font-size: 35px;
   transition:
@@ -667,11 +678,11 @@ summary:focus-visible {
     transform 0.3s;
 }
 .contact-arrow:hover {
-  background: var(--green);
+  background: var(--accent);
   transform: rotate(7deg);
 }
 .contact-bottom {
-  border-top: 1px solid #3a4a42;
+  border-top: 1px solid var(--dark-line);
   padding-top: 26px;
   display: flex;
   align-items: flex-end;
@@ -680,7 +691,7 @@ summary:focus-visible {
 }
 .contact-bottom p {
   font-size: 11px;
-  color: #adbbb3;
+  color: var(--dark-muted);
   max-width: 380px;
 }
 .email-link {
@@ -689,7 +700,7 @@ summary:focus-visible {
   margin-top: 10px;
 }
 .email-link:hover {
-  color: var(--mint);
+  color: var(--highlight);
 }
 .contact-links {
   display: flex;
@@ -703,14 +714,14 @@ summary:focus-visible {
   font-size: 12px;
 }
 .contact-links > a:hover {
-  color: var(--mint);
+  color: var(--highlight);
 }
 .contact-links .btn-ghost {
-  color: #f5f9f6;
-  border-color: #506158;
+  color: var(--dark-text);
+  border-color: var(--dark-border);
 }
 .contact-links .btn-ghost:hover {
-  background: #2a3932;
+  background: var(--dark-hover);
 }
 .footer {
   padding: 25px 0;
@@ -758,7 +769,7 @@ summary:focus-visible {
 }
 .page-intro h1 span,
 .about-intro h1 span {
-  color: var(--green);
+  color: var(--accent);
 }
 .page-intro-bottom {
   display: flex;
@@ -816,11 +827,11 @@ summary:focus-visible {
   color: #fff;
 }
 .project-filters input:focus-visible + span {
-  outline: 2px solid var(--green);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 .project-filters label:hover span {
-  background: #e9efea;
+  background: var(--surface);
   color: var(--ink);
 }
 .project-filters label:hover input:checked + span {
@@ -864,7 +875,7 @@ summary:focus-visible {
   line-height: 1.3;
 }
 .project-card h2 a:hover {
-  color: var(--green);
+  color: var(--accent);
 }
 .project-card-body > p {
   font-size: 13px;
@@ -901,7 +912,7 @@ summary:focus-visible {
   color: var(--muted);
 }
 .project-card-actions > div > a:hover {
-  color: var(--green);
+  color: var(--accent);
 }
 .gallery-resume {
   margin-top: 70px;
@@ -961,7 +972,7 @@ summary:focus-visible {
   width: 100%;
   position: relative;
   border: 0;
-  background: #edf1ed;
+  background: var(--surface);
   padding: 28px;
   border-radius: 6px;
   cursor: zoom-in;
@@ -1005,7 +1016,7 @@ summary:focus-visible {
   max-height: calc(100dvh - 40px);
 }
 .image-dialog::backdrop {
-  background: #0c1719da;
+  background: #18191cda;
   backdrop-filter: blur(5px);
 }
 .image-dialog form {
@@ -1047,7 +1058,7 @@ body:has(dialog[open]) {
   color: var(--muted);
 }
 .case-sidebar nav a:hover {
-  color: var(--green);
+  color: var(--accent);
 }
 .case-sidebar .skill-list {
   margin-top: 15px;
@@ -1090,7 +1101,7 @@ body:has(dialog[open]) {
   font:
     11px "JetBrains Mono",
     monospace;
-  color: var(--green);
+  color: var(--accent);
   padding-top: 4px;
 }
 .decision-list h3 {
@@ -1102,11 +1113,11 @@ body:has(dialog[open]) {
   font-size: 13px !important;
 }
 .architecture-section {
-  background: #edf2ee;
+  background: var(--surface);
   padding: 60px 0;
 }
 .pipeline-explorer {
-  border: 1px solid #cbd8cf;
+  border: 1px solid var(--line);
   border-radius: 6px;
   overflow: hidden;
   background: var(--paper);
@@ -1132,7 +1143,7 @@ body:has(dialog[open]) {
   border-left: 1px solid var(--line);
 }
 .pipeline-tabs button[aria-selected="true"] {
-  background: #e5f3eb;
+  background: var(--accent-selected);
 }
 .stage-index {
   font:
@@ -1144,7 +1155,7 @@ body:has(dialog[open]) {
   position: absolute;
   top: 20px;
   right: 25px;
-  color: var(--green);
+  color: var(--accent);
   font-size: 20px;
 }
 .pipeline-tabs strong {
@@ -1170,7 +1181,7 @@ body:has(dialog[open]) {
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--green);
+  background: var(--accent);
 }
 .pipeline-content {
   display: grid;
@@ -1195,12 +1206,12 @@ body:has(dialog[open]) {
 }
 .output-contract p {
   font-size: 12px;
-  color: var(--green);
+  color: var(--accent);
   margin-top: 8px;
 }
 .code-sample {
   background: var(--dark);
-  color: #d4e7db;
+  color: #dce3f2;
   border-radius: 5px;
   min-width: 0;
   display: flex;
@@ -1212,17 +1223,17 @@ body:has(dialog[open]) {
   align-items: center;
   justify-content: space-between;
   padding: 13px 18px;
-  border-bottom: 1px solid #3a4a42;
+  border-bottom: 1px solid var(--dark-line);
   font:
     10px "JetBrains Mono",
     monospace;
-  color: #a7bfb0;
+  color: var(--dark-muted);
 }
 .code-heading a {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: var(--mint);
+  color: var(--highlight);
 }
 .code-sample pre {
   font:
@@ -1239,8 +1250,8 @@ body:has(dialog[open]) {
     9px/1.6 "JetBrains Mono",
     monospace;
   padding: 10px 18px;
-  color: #a7bfb0;
-  border-top: 1px solid #3a4a42;
+  color: var(--dark-muted);
+  border-top: 1px solid var(--dark-line);
   overflow-wrap: anywhere;
 }
 .outcome-grid {
@@ -1260,7 +1271,7 @@ body:has(dialog[open]) {
   font:
     600 34px "Manrope",
     sans-serif;
-  color: var(--green);
+  color: var(--accent);
 }
 .outcome-item strong.long-value {
   font-size: 24px;
@@ -1288,7 +1299,7 @@ body:has(dialog[open]) {
 }
 .next-project {
   padding: 30px 0;
-  background: #eef2ee;
+  background: var(--surface);
 }
 .next-project a {
   display: flex;
@@ -1308,7 +1319,7 @@ body:has(dialog[open]) {
   transform: translate(5px, -5px);
 }
 .live-section {
-  background: #edf2ee;
+  background: var(--surface);
 }
 .live-preview-head {
   display: flex;
@@ -1356,7 +1367,7 @@ body:has(dialog[open]) {
   font-weight: 600;
 }
 .preview-cover:hover .play-label {
-  background: var(--mint);
+  background: var(--highlight);
 }
 .embed-toolbar {
   display: flex;
@@ -1380,7 +1391,7 @@ body:has(dialog[open]) {
   padding-top: 14px;
 }
 .embed-note a {
-  color: var(--green);
+  color: var(--accent);
   text-decoration: underline;
 }
 .embed-note a svg {
@@ -1429,14 +1440,14 @@ body:has(dialog[open]) {
 }
 .availability-note p {
   font-size: 12px;
-  color: var(--green);
+  color: var(--accent);
 }
 .status-dot {
   flex-shrink: 0;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--accent);
   margin-top: 7px;
 }
 .ruled-section {
@@ -1456,7 +1467,7 @@ body:has(dialog[open]) {
   height: 40px;
   border: 1px solid var(--line);
   border-radius: 50%;
-  color: var(--green);
+  color: var(--accent);
 }
 .experience-head {
   display: flex;
@@ -1499,7 +1510,7 @@ body:has(dialog[open]) {
   margin-bottom: 12px;
 }
 .experience-card li::marker {
-  color: var(--green);
+  color: var(--accent);
 }
 .experience-tags {
   display: flex;
@@ -1507,10 +1518,10 @@ body:has(dialog[open]) {
   gap: 7px 16px;
   font-size: 10px;
   font-weight: 500;
-  color: var(--green);
+  color: var(--accent);
 }
 .education-band {
-  background: #eef2ee;
+  background: var(--surface);
 }
 .education-grid {
   display: grid;
@@ -1519,7 +1530,7 @@ body:has(dialog[open]) {
 }
 .education-grid article {
   padding-top: 22px;
-  border-top: 1px solid #cad7ce;
+  border-top: 1px solid var(--line);
 }
 .education-grid h3 {
   font-size: 21px;
@@ -1571,14 +1582,14 @@ body:has(dialog[open]) {
   color: var(--muted);
 }
 .role-grid .role-evidence {
-  color: var(--green);
-  border-top: 1px solid #cad7ce;
+  color: var(--accent);
+  border-top: 1px solid var(--line);
   margin: 18px 0;
   padding-top: 18px;
 }
 .collaboration {
   padding-top: 30px;
-  border-top: 1px solid #cad7ce;
+  border-top: 1px solid var(--line);
   margin-top: 36px;
   display: flex;
   align-items: center;
@@ -1624,7 +1635,7 @@ body:has(dialog[open]) {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--green);
+  background: var(--accent);
   transform-origin: left;
   pointer-events: none;
 }
@@ -2042,7 +2053,7 @@ body:has(dialog[open]) {
       opacity 0.22s,
       transform 0.22s,
       visibility 0.22s;
-    box-shadow: 0 15px 25px #17211e0a;
+    box-shadow: 0 15px 25px #18191c0a;
   }
   .mobile-menu.is-open {
     visibility: visible;
