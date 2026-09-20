@@ -1412,6 +1412,33 @@ body:has(dialog[open]) {
   font-size: 14px;
   margin-top: 16px;
 }
+.about-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.about-facts li {
+  position: relative;
+  padding: 13px 0 13px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+.about-facts li::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
 .portrait {
   margin: 0;
 }
@@ -1598,6 +1625,43 @@ body:has(dialog[open]) {
 .collaboration h3 {
   font-size: 16px;
   white-space: nowrap;
+}
+.toolkit {
+  display: grid;
+  grid-template-columns: 0.42fr 1fr;
+  gap: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  margin-top: 32px;
+}
+.toolkit-heading h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.toolkit-heading p {
+  max-width: 260px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 30px;
+}
+.toolkit-grid article {
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+}
+.toolkit-grid h4 {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font: 600 10px "JetBrains Mono", monospace;
+  text-transform: uppercase;
+}
+.toolkit-grid p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
 }
 .resume-list article {
   display: flex;
@@ -1905,6 +1969,9 @@ body:has(dialog[open]) {
   .about-paragraph {
     font-size: 13px;
   }
+  .about-facts {
+    grid-template-columns: 1fr;
+  }
   .experience-card {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1936,6 +2003,13 @@ body:has(dialog[open]) {
   .role-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .toolkit {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .toolkit-grid {
+    grid-template-columns: 1fr;
   }
   .collaboration {
     flex-direction: column;

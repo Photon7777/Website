@@ -170,7 +170,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.05}>
             <strong>2 years</strong>
-            <p>Across analytics & software engineering</p>
+            <p>Of industry retail analytics experience</p>
           </Reveal>
           <Reveal delay={0.1}>
             <strong>$20M</strong>

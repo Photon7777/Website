@@ -63,3 +63,22 @@ test("every published image and resume reference exists", async () => {
   for (const file of files)
     await access(new URL(`../public${file}`, import.meta.url));
 });
+test("portfolio content stays aligned with the current resumes", () => {
+  const roles = siteData.experience.map((experience) => experience.role);
+  assert.deepEqual(roles, [
+    "Research Assistant, Smith Behavioral Lab",
+    "Graduate Teaching Assistant, BMSO 758L - AI and Smart Agents",
+    "AI & Data Analytics Consultant | Microsoft-Sponsored Capstone",
+    "Data Analyst",
+  ]);
+  assert.equal(
+    siteData.education[0].degree,
+    "Master of Science, Information Systems and AI",
+  );
+  assert.equal(siteData.distinctions.length, 3);
+  assert.ok(siteData.skills["LLM, RAG & Agentic AI"].includes("Whisper"));
+  const retailIq = siteData.projects.find(
+    (project) => project.slug === "retailiq",
+  );
+  assert.ok(retailIq.highlights.some(({ value }) => value === "12.9%"));
+});

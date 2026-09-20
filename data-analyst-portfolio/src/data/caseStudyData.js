@@ -20,7 +20,7 @@ export const projectDetails = {
       },
     ],
     validation:
-      "dbt checks cover source integrity and model relationships. The repository also includes Python tests, a data dictionary, pipeline runbooks, and deployment documentation.",
+      "A Random Forest model was evaluated on an 84K-row holdout set at 12.9% WAPE (87% accuracy). Seventy-seven declared dbt checks cover source integrity and model relationships, while the repository also includes Python tests, a data dictionary, pipeline runbooks, and deployment documentation.",
     limits:
       "The retail source is the Walmart forecasting dataset. Inventory and weather enrichment include synthetic data. Forecasting is a baseline demonstration; project scale does not represent production customers or a measured business uplift.",
     evidenceUrl:

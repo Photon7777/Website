@@ -22,6 +22,11 @@ export default function AboutPage() {
                 {paragraph}
               </p>
             ))}
+            <ul className="about-facts" aria-label="Current roles and education">
+              {siteData.quickFacts.map((fact) => (
+                <li key={fact}>{fact}</li>
+              ))}
+            </ul>
             <div className="availability-note">
               <span className="status-dot" aria-hidden="true" />
               <p>{siteData.availability}</p>
@@ -45,7 +50,7 @@ export default function AboutPage() {
               />
               <figcaption>
                 <strong>Sai Praneeth</strong>
-                <span>MSIS / University of Maryland</span>
+                <span>MS Information Systems and AI / UMD Smith</span>
               </figcaption>
             </figure>
           </Reveal>
@@ -60,7 +65,7 @@ export default function AboutPage() {
           />
           <div className="experience-list">
             {siteData.experience.map((experience) => (
-              <Reveal key={experience.company}>
+              <Reveal key={`${experience.company}-${experience.role}`}>
                 <ExperienceCard experience={experience} />
               </Reveal>
             ))}
@@ -137,6 +142,22 @@ export default function AboutPage() {
               {siteData.skills["Soft Skills"].map((skill) => (
                 <SkillBadge key={skill}>{skill}</SkillBadge>
               ))}
+            </div>
+          </div>
+          <div className="toolkit">
+            <div className="toolkit-heading">
+              <h3>Technical toolkit</h3>
+              <p>The complete stack represented across my current resumes.</p>
+            </div>
+            <div className="toolkit-grid">
+              {Object.entries(siteData.skills)
+                .filter(([category]) => category !== "Soft Skills")
+                .map(([category, skills]) => (
+                  <article key={category}>
+                    <h4>{category}</h4>
+                    <p>{skills.join(" / ")}</p>
+                  </article>
+                ))}
             </div>
           </div>
         </div>

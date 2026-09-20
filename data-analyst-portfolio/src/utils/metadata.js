@@ -38,7 +38,7 @@ export function getMetadata(pathname) {
       ...defaults,
       title: "About & Experience | Sai Praneeth",
       description:
-        "MSIS at the University of Maryland, experience in analytics and software engineering, and recognition across data and AI. Seeking full-time roles after December 2026.",
+        "MS Information Systems and AI candidate at UMD Smith with experience in retail analytics, behavioral research, AI instruction, and a Microsoft-sponsored healthcare capstone.",
     };
   if (route.type === "not-found")
     return {
